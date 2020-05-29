@@ -1,9 +1,12 @@
 '''这个文件是各类的定义'''
 from datetime import datetime
+from utils import slave_status
+
 '''主控机的工作状态'''
 W_CLOSED = 1
 W_RUNNING = 2
 W_WAITING = 3
+
 '''主控机的温度模式'''
 T_HOT = 4
 T_COOL = 5
@@ -120,3 +123,125 @@ class MasterMachine:
         '''为客户办理入住'''
     def checkOut(self,roomId:str):
         '''为roomId房间办理退房手续'''
+
+
+class Slave:
+    def __init__(self, roomID: str, pwd: str, targetTemp: float, targetSpeed: int, defaultMode: int):
+        self.__roomID = roomID
+        self.__password = pwd
+        self.__username = ...
+        self.__status = slave_status.AVAILABLE
+        self.__currentTemp = ...
+        self.__targetTemp = targetTemp
+        self.__currentSpeed = targetSpeed
+        self.__currentMode = defaultMode
+        self.__cost = 0.0
+        self.__checkinTime = ...
+        self.__checkoutTime = ...
+        self.__timer = 0
+        self.__serviceTime = 0
+
+    @property
+    def roomID(self):
+        return self.__roomID
+
+    @property
+    def password(self):
+        return self.__password
+
+    @property
+    def username(self):
+        return self.__username
+
+    @property
+    def status(self):
+        return self.__status
+    
+    @status.setter
+    def status(self, status):
+        self.__status = status
+    
+    @property
+    def currentTemp(self):
+        return self.__currentTemp if self.__currentTemp is not ... else None
+    
+    @currentTemp.setter
+    def currentTemp(self, temp):
+        self.__currentTemp = temp
+    
+    @property
+    def targetTemp(self):
+        return self.__targetTemp
+
+    @targetTemp.setter
+    def targetTemp(self, temp):
+        self.__targetTemp = temp
+    
+    @property
+    def currentSpeed(self):
+        return self.__currentSpeed
+    
+    @currentSpeed.setter
+    def currentSpeed(self, speed):
+        self.__currentSpeed = speed
+    
+    @property
+    def currentMode(self):
+        return self.__currentMode
+    
+    @currentMode.setter
+    def currentMode(self, mode):
+        self.__currentMode = mode
+    
+    @property
+    def cost(self):
+        return self.__cost
+    
+    @cost.setter
+    def cost(self, cost):
+        self.__cost = cost
+    
+    @property
+    def checkinTime(self):
+        return self.__checkinTime
+    
+    @property
+    def checkoutTime(self):
+        return self.__checkoutTime
+    
+    @property
+    def timer(self):
+        return self.__timer
+    
+    @timer.setter
+    def timer(self, timer):
+        self.__timer = timer
+    
+    @property
+    def serviceTime(self):
+        return self.__serviceTime
+    
+    @serviceTime.setter
+    def serviceTime(self, time):
+        self.__serviceTime = time
+    
+    def check_in(self, username):
+        self.__status = slave_status.CLOSED
+        self.__username = username
+        self.__checkinTime = datetime.datetime.now()
+
+    def check_out(self):
+        self.__username = ...
+        self.__status = slave_status.AVAILABLE
+        self.__checkoutTime = datetime.datetime.now()
+    
+    def switch_on(self, pwd, defaultTemp):
+        if pwd == self.__password:
+            self.__status = slave_status.RUNNING
+            self.__currentTemp = defaultTemp
+        else:
+            raise RuntimeError('密码错误')
+    
+    def switch_off(self):
+        self.__status = slave_status.CLOSED
+    
