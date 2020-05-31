@@ -1,7 +1,11 @@
 '''这个文件是各类的定义'''
 from datetime import datetime
+<<<<<<< HEAD
 from utils import slave_status
 
+=======
+import threading
+>>>>>>> frame of controller
 '''主控机的工作状态'''
 W_CLOSED = 1
 W_RUNNING = 2
@@ -26,6 +30,7 @@ class SlaveDefaultParam:
 class MasterMachine:
     '''主控机类'''
     '''下面很多方法都应该向日志文件中存储一些信息，但暂时先没写'''
+    _instance_lock = threading.Lock()
 
     def __init__(self):
         '''初始化函数'''
@@ -37,6 +42,15 @@ class MasterMachine:
         self.__activeRoomList = list()  # 当前处于工作状态的从控机列表
         self.__slaveMachine = dict()  # 键是房间号，值是对应的从控机类
         self.__feeRate = self.__defaultPara.DEFAULT_FEE_RATE  # 不同风速对应的费率
+        self.__refreshFeq=1
+
+    @classmethod
+    def instance(cls): #支持多线程的单例模式
+        if not hasattr(cls, '_instance'):
+            with cls._instance_lock:
+                if not hasattr(cls, "_instance"):   #获得锁后还要再判断一次是否在等待锁的时候创建了实例
+                    cls._instance = cls()
+        return cls._instance
 
     def Start(self):
         '''主控机开机'''
