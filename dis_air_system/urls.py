@@ -1,4 +1,4 @@
-"""dis_air_system URL Configuration
+"""new_软工 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url,include
+from login import views as login
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^index/', login.index),
+    url(r'^login/', login.login),
+    url(r'^logout/', login.logout),
+    url(r'^register/', login.register),
+    url(r'^users/', include('users.urls')),
+    url(r'^$', login.index),
 ]
