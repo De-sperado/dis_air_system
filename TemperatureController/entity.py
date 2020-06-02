@@ -1,11 +1,8 @@
 '''这个文件是各类的定义'''
 from datetime import datetime
-<<<<<<< HEAD
 from utils import slave_status
 
-=======
 import threading
->>>>>>> frame of controller
 '''主控机的工作状态'''
 W_CLOSED = 1
 W_RUNNING = 2
