@@ -2,7 +2,7 @@ import threading
 from TemperatureController.service import (
     AdministratorService,  DetailService,
     InvoiceService, ReportService, SlaverService)
-from tools import logger
+from .tools import logger
 
 '''用户类别宏定义'''
 CUSTOMER = 11
