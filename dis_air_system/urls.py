@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^login/', login.login),
     url(r'^logout/', login.logout),
     url(r'^register/', login.register),
-    url(r'^users/', include('users.urls')),
+    # url(r'^users/', include('users.urls')),
     url(r'^$', login.index),
 ]
