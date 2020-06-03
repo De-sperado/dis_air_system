@@ -1,4 +1,0 @@
-django==2.1.7
-djangorestframework
-django-cors-headers
-
