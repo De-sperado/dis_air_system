@@ -8,8 +8,9 @@ import threading
 from typing import List, Tuple, Optional, Dict
 
 from TemperatureController.models import DetailModel, Log
-from tools import logger, working_mode, fan_speed, room_status, UPDATE_FREQUENCY, \
-    TEMPERATURE_CHANGE_RATE_PER_SEC, RepeatTimer, operations, DBFacade, room_ids, MAX_QUEUE, MAX_WAITING_TIME
+from .tools import logger, UPDATE_FREQUENCY, TEMPERATURE_CHANGE_RATE_PER_SEC, RepeatTimer, \
+    DBFacade, room_ids, MAX_QUEUE, MAX_WAITING_TIME, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP,\
+    CHANGE_SPEED, STANDBY, RUNNING, STOPPED, AVAILABLE, CLOSED, SERVING, WAITING, LOW, NORMAL, HIGH
 from TemperatureController.entity import MasterMachine, Detail, Invoice, Report, Room
 
 
@@ -120,7 +121,7 @@ class RunningSlaver:
             self.__room.service_time += UPDATE_FREQUENCY
             self.__fee_since_start += self.__fee_rate_per_sec * UPDATE_FREQUENCY
             self.__room.fee += self.__fee_rate_per_sec * UPDATE_FREQUENCY
-            if mode == working_mode.COOL:
+            if mode == COOL:
                 self.room.current_temp -= TEMPERATURE_CHANGE_RATE_PER_SEC[self.target_speed] * UPDATE_FREQUENCY
             else:
                 self.room.current_temp += TEMPERATURE_CHANGE_RATE_PER_SEC[self.target_speed] * UPDATE_FREQUENCY
@@ -186,7 +187,7 @@ class SlaverQueue:
         if len(self.queue) != 0:
             for service in self.queue:
                 service.update(mode)
-                if mode == working_mode.COOL:
+                if mode == COOL:
                     if service.room.current_temp - service.room.target_temp < 0.001:
                         reach_temp_services.append(service)
                 else:
@@ -240,7 +241,7 @@ class Dispatcher:
         for service in reach_temp_services:
             self.__slaver_queue.remove(service.room.room_id)
             logger.info('房间' + service.room.room_id + '到达设定温度')
-            service.room.status = room_status.STANDBY
+            service.room.status = STANDBY
         self.__slaver_queue.dispatch()
 
     def reset(self):
@@ -280,31 +281,31 @@ class SlaverService:
             要创建的服务的目标温度, 目标风速
         """
         room = self.__master_machine.get_room(room_id)
-        if room.status == room_status.CLOSED:
+        if room.status == CLOSED:
             # 按照默认温度风速创建服务
             room.target_temp = self.__master_machine.default_target_temp
             room.current_speed = self.__master_machine.default_speed
             target_temp, speed = self.__master_machine.default_target_temp, self.__master_machine.default_speed
-        elif room.status == room_status.STANDBY:
+        elif room.status == STANDBY:
             # 按照先前温度和风速创建服务
             target_temp, speed = room.target_temp, room.current_speed
         else:
             logger.error('房间已开机或未入住')
             raise RuntimeError('房间已开机或入住')
         room.turn_on()
-        DBFacade.exec(Log.objects.create, room_id=room_id, operation=operations.POWER_ON,
+        DBFacade.exec(Log.objects.create, room_id=room_id, operation=POWER_ON,
                       op_time=datetime.datetime.now())
         return target_temp, speed
 
     def slave_machine_power_off(self, room_id):
         """关闭指定从机"""
         room = self.__master_machine.get_room(room_id)
-        if room.status == room_status.CLOSED:
+        if room.status == CLOSED:
             logger.error('房间已关机')
             raise RuntimeError('房间已关机')
         self.__slaver_queue.remove(room_id)
         room.turn_off()
-        DBFacade.exec(Log.objects.create, room_id=room_id, operation=operations.POWER_OFF,
+        DBFacade.exec(Log.objects.create, room_id=room_id, operation=POWER_OFF,
                       op_time=datetime.datetime.now())
 
     def init_temp_and_speed(self, room_id: str, target_temp: float, target_speed: int):
@@ -336,11 +337,11 @@ class SlaverService:
             logger.error('目标温度不合法')
             raise RuntimeError('目标温度不合法')
         room = self.__master_machine.get_room(room_id)
-        if room.status == room_status.CLOSED or room.status == room_status.AVAILABLE:
+        if room.status == CLOSED or room.status == AVAILABLE:
             logger.error('未入住或未开机')
             raise RuntimeError('未入住或未开机')
         room.target_temp = target_temp
-        DBFacade.exec(Log.objects.create, room_id=room_id, operation=operations.CHANGE_TEMP,
+        DBFacade.exec(Log.objects.create, room_id=room_id, operation=CHANGE_TEMP,
                       op_time=datetime.datetime.now())
         logger.info('房间' + room_id + '改变目标温度为' + str(target_temp))
 
@@ -352,11 +353,11 @@ class SlaverService:
             room_id: 房间号
             target_speed: 目标风速
         """
-        if target_speed not in (fan_speed.LOW, fan_speed.NORMAL, fan_speed.HIGH):
+        if target_speed not in (LOW, NORMAL, HIGH):
             logger.error('目标风速不合法')
             raise RuntimeError('目标风速不合法')
         room = self.__master_machine.get_room(room_id)
-        if room.status == room_status.CLOSED or room.status == room_status.AVAILABLE:
+        if room.status == CLOSED or room.status == AVAILABLE:
             logger.error('未入住或未开机')
             raise RuntimeError('未入住或未开机')
         room.current_speed = target_speed
@@ -367,7 +368,7 @@ class SlaverService:
             air_conditioner_service.fee_rate = self.__master_machine.fee_rate[target_speed]
             self.__slaver_queue.dispatch()
             self.__slaver_queue.push(air_conditioner_service)
-        DBFacade.exec(Log.objects.create, room_id=room_id, operation=operations.CHANGE_SPEED,
+        DBFacade.exec(Log.objects.create, room_id=room_id, operation=CHANGE_SPEED,
                       op_time=datetime.datetime.now())
         logger.info('房间' + room_id + '改变目标风速为' + str(target_speed))
 
@@ -407,13 +408,13 @@ class AdministratorService:
             logger.error('主控机未初始化')
             raise RuntimeError('主控机未初始化')
         print(mode)
-        if mode not in (working_mode.COOL, working_mode.HOT):
+        if mode not in (COOL, HOT):
             logger.error('mode不存在')
             raise RuntimeError('mode不存在')
         if not temp_low_limit <= default_target_temp <= temp_high_limit:
             logger.error('目标温度不合法')
             raise RuntimeError('目标温度不合法')
-        if default_speed not in (fan_speed.LOW, fan_speed.NORMAL, fan_speed.HIGH):
+        if default_speed not in (LOW, NORMAL, HIGH):
             logger.error('speed不存在')
             raise RuntimeError('speed不存在')
         if len(fee_rate) != 3:

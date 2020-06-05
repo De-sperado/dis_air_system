@@ -5,7 +5,8 @@ import threading
 from typing import List, Dict, Optional
 
 from TemperatureController.models import DetailModel, Log
-from tools import working_mode, master_machine_status, room_status, logger, room_ids, operations, DBFacade, current_temp
+from .tools import logger, room_ids, DBFacade, current_temp, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP,\
+    CHANGE_SPEED, STANDBY, RUNNING, STOPPED, AVAILABLE, CLOSED, SERVING, WAITING, LOW, NORMAL, HIGH
 
 
 class MasterMachine:
@@ -29,8 +30,8 @@ class MasterMachine:
 
     def __init__(self):
         """初始化主控机"""
-        self.__mode = working_mode.No
-        self.__status = master_machine_status.STANDBY
+        self.__mode = No
+        self.__status = STANDBY
         self.__start_time = None
         self.__finish_time = None
         self.__temp_low_limit = None
@@ -118,22 +119,22 @@ class MasterMachine:
 
     def turn_on(self) -> dict:
         """启动主控机"""
-        self.__status = master_machine_status.RUNNING
+        self.__status = RUNNING
         self.__start_time = datetime.datetime.now()
         logger.info(str(self.__start_time) + ' 主控机启动')
 
     def turn_off(self) -> None:
         """关闭主控机"""
-        self.__status = master_machine_status.STOPPED
+        self.__status = STOPPED
         self.__finish_time = datetime.datetime.now()
         for room in self.__rooms:
-            room.status = room_status.CLOSED
+            room.status = CLOSED
         logger.info(str(self.__finish_time) + '主控机关机')
 
     def get_detail(self, room_id: str):
         """获取指定房间的详单"""
         room = self.get_room(room_id)
-        if room.status != room_status.AVAILABLE:
+        if room.status != AVAILABLE:
             logger.error('需先退房')
             raise RuntimeError('需先退房')
 
@@ -171,15 +172,15 @@ class MasterMachine:
         temp_times = 0
         speed_times = 0
         for l in logs:
-            on_off_times += 1 if l.operation == operations.POWER_ON or l.operation == operations.POWER_OFF else 0
-            temp_times += 1 if l.operation == operations.CHANGE_TEMP else 0
-            speed_times += 1 if l.operation == operations.CHANGE_SPEED else 0
+            on_off_times += 1 if l.operation == POWER_ON or l.operation == POWER_OFF else 0
+            temp_times += 1 if l.operation == CHANGE_TEMP else 0
+            speed_times += 1 if l.operation == CHANGE_SPEED else 0
         return Report(room_id, start_time, finish_time, duration, on_off_times,
                       temp_times, speed_times, len(details), round(fee, 2))
 
     def get_slave_status(self, room) -> Dict:
         """获取指定从机的状态"""
-        mode = 0 if self.__mode == working_mode.COOL else 1
+        mode = 0 if self.__mode == COOL else 1
         logger.debug('获取房间' + room.room_id + '状态')
         return {
             'room_id': room.room_id,
@@ -229,7 +230,7 @@ class Room:
             target_speed: 目标风速
         """
         self.__room_id = room_id
-        self.__status = room_status.AVAILABLE
+        self.__status = AVAILABLE
         self.__current_temp = current_temp
         self.__current_speed = target_speed
         self.__target_temp = target_temp
@@ -258,10 +259,10 @@ class Room:
 
     def check_in(self, user_id):
         """办理入住"""
-        if self.__status != room_status.AVAILABLE:
+        if self.__status != AVAILABLE:
             logger.error('该房间已经有客人入住')
             raise RuntimeError('该房间已经有客人入住')
-        self.__status = room_status.CLOSED
+        self.__status = CLOSED
         self.__fee = 0
         self.__service_time = 0
         self.__user_id = user_id
@@ -270,20 +271,20 @@ class Room:
 
     def turn_on(self):
         """开机"""
-        self.__status = room_status.STANDBY
+        self.__status = STANDBY
         logger.info('房间' + self.__room_id + '开机')
 
     def turn_off(self):
         """关机"""
-        self.__status = room_status.CLOSED
+        self.__status = CLOSED
         logger.info('房间' + self.__room_id + '关机')
 
     def check_out(self):
         """退房"""
-        if self.__status != room_status.CLOSED:
+        if self.__status != CLOSED:
             logger.error('需先关机才能退房')
             raise RuntimeError('需先关机才能退房')
-        self.__status = room_status.AVAILABLE
+        self.__status = AVAILABLE
         self.__user_id = ""
         self.__check_out_time = datetime.datetime.now()
         logger.info('房间' + self.__room_id + '退房')
