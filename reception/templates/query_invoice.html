@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账单</title>
+</head>
+<body>
+    <div>
+        <h1>请选择房间号：</h1>
+        <select id="ss" style="width: 100px;height: 40px;font-size: large">
+            <option value="0">请选择</option>
+            <option value="309c">309c</option>
+            <option value="310c">310c</option>
+            <option value="311c">311c</option>
+            <option value="312c">312c</option>
+            <option value="f3">f3</option>
+        </select>
+
+        <button onclick="query()">查询</button>
+        <button onclick="print()">打印</button>
+    </div>
+    <div>
+        <p id="content"></p>
+    </div>
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    </script>
+    <script type="text/javascript">
+        function query() {
+            var myselect = document.getElementById("ss");
+            var index=myselect.selectedIndex;
+            var val=myselect.options[index].value;
+            if(val == 0)
+                alert("请选择房间号");
+            else{
+                $.ajax({
+                    type:"post",
+                    data:{
+                        'room_id': val
+                    },
+                    success:function (data) {
+                        var obj = document.getElementById("content")
+                        obj.innerHTML=data
+                    },
+                    error:function () {
+                        alert("error!");
+                    }
+                })
+            }}
+            function print() {
+            var myselect = document.getElementById("ss");
+            var index=myselect.selectedIndex;
+            var val=myselect.options[index].value;
+            if(val == 0)
+                alert("请选择房间号");
+            else{
+                $.ajax({
+                    type:"post",
+                    data:{
+                        'room_id': val
+                    },
+                    url:"http://127.0.0.1:8000/users/reception/print_invoice/",
+                    success:function (data) {
+                        alert("打印成功！");
+                    },
+                    error:function () {
+                        alert("打印失败!请重试！");
+                    }
+                })
+            }}
+    </script>
+</body>
+</html>

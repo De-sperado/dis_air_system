@@ -1,7 +1,7 @@
 import json
 from django.shortcuts import render
-from air_conditioner.controller import SlaveController
-from air_conditioner.controller import MasterController
+from TemperatureController.controller import SlaveController
+from TemperatureController.controller import MasterController
 from _ast import operator
 from django.http import JsonResponse
 

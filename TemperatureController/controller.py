@@ -10,29 +10,6 @@ RECEPTIONIST = 12
 MANAGER = 13
 
 
-class LogonController:
-    '''登录控制器'''
-    _instance_lock = threading.Lock()
-
-    def __init__(self):
-        pass
-
-    @classmethod
-    def instance(cls):  # 支持多线程的单例模式
-        if not hasattr(cls, '_instance'):
-            with cls._instance_lock:
-                if not hasattr(cls, "_instance"):  # 获得锁后还要再判断一次是否在等待锁的时候创建了实例
-                    cls._instance = cls()
-        return cls._instance
-
-    def LogService(self, name: str, password: str, kind: int):
-        '''处理用户登录服务'''
-        if kind == CUSTOMER:
-            pass
-        elif kind == RECEPTIONIST:
-            pass
-        else:
-            pass
 
 
 class MasterController:
@@ -63,19 +40,17 @@ class MasterController:
         if operation == 'turn on':
             self.__adminService.start_master_machine()
             self.__masterStart = True
-        elif operation == 'power on':
-            self.__adminService.init_master_machine()
         elif operation == 'set param':
             self.__adminService.set_master_machine_param(
-                kwargs.get('mode'), kwargs.get('temp_low_limit'), kwargs.get('temp_high_limit'),
-                kwargs.get('default_target_temp'), kwargs.get('default_speed'), kwargs.get('fee_rate'),
-                kwargs.get('targetFeq')
+                kwargs.get('key'), kwargs.get('value')
             )
         elif operation == 'turn off':
             self.__adminService.stop_master_machine()
             self.__masterStart = False
         elif operation == 'get status':
             return self.__adminService.get_status()
+        elif operation == 'get main status':
+            return self.__adminService.get_main_status()
         elif operation == 'check in':
             room_id = kwargs.get('room_id')
             user_id = kwargs.get('user_id')
@@ -83,8 +58,6 @@ class MasterController:
         elif operation == 'check out':
             room_id = kwargs.get('room_id')
             return self.__adminService.check_out(room_id)
-        elif operation == 'set status':
-            pass
         else:
             logger.error('不支持的操作')
             raise RuntimeError('不支持的操作')
@@ -113,11 +86,11 @@ class SlaveController:
             raise RuntimeError('主控机未启动')
         operation = kwargs.get('operation')
         room_id = kwargs.get('room_id')
-        if room_id is None:
-            logger.error('缺少参数room_id')
-            raise RuntimeError('缺少参数room_id')
-        if operation == 'get fee':
-            return self.__slaverService.get_current_fee(room_id)
+        if operation == 'login':
+            user_id=kwargs.get('user_id')
+            return self.__slaverService.login(room_id,user_id)
+        if operation == 'get status':
+            return self.__slaverService.get_current_status(room_id)
         elif operation == 'change temp':
             target_temp = kwargs.get('target_temp')
             self.__slaverService.change_temp(room_id, target_temp)

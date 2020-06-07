@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前台-功能页面</title>
+</head>
+<body>
+    <h1>您好：{{ request.session.user_name }}</h1>
+    <div>
+        <button class="btn btn-default"><a href="roomList.html">客户入住</a></button>
+        <button class="btn btn-default"><a href="/users/reception/query_detail/">显示详单</a></button>
+        <button class="btn btn-default"><a href="/users/reception/query_invoice/">显示账单</a></button>
+    </div>
+
+</body>
+
+</html>

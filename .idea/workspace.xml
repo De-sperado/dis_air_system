@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/administrator/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/administrator/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/administrator/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0002_auto_20200601_1345.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0003_auto_20200601_1412.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0004_auto_20200601_1414.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0005_auto_20200601_1421.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0006_delete_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/0007_auto_20200606_1120.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/templates/login/client_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/templates/checkin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/templates/func.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/templates/query_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/templates/query_invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/templates/roomList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reception/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/administrator/admin_func.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/administrator/init.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/manager/func.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_auto_20200603_1051.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0003_auto_20200603_1052.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0004_auto_20200603_1108.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dis_air_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dis_air_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/309c-20200603000000-report.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/309c-20200603135136-detail.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/309c-20200603135136-invoice.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dis_air_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dis_air_system/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/templates/login/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_machine/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/slave/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/system.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/administrator/func.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/client/func.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/client/func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/manager/func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/reception/func.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1czkHwl5cjoJ9hWMgWGp2FSuT64" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/administrator/templates/administrator" />
+      <recent name="$PROJECT_DIR$/administrator/templates" />
+      <recent name="$PROJECT_DIR$/administrator" />
+      <recent name="$PROJECT_DIR$/reception" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="" />
+      <created>1591347701307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591347701307</updated>
+      <workItem from="1591347702589" duration="978000" />
+      <workItem from="1591348995066" duration="303000" />
+      <workItem from="1591349325665" duration="8711000" />
+      <workItem from="1591412377047" duration="17322000" />
+      <workItem from="1591535866376" duration="1254000" />
+      <workItem from="1591538732866" duration="8106000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="270" y="59" key="SettingsEditor" timestamp="1591538772417">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="270" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1591538772417" />
+    <state x="377" y="122" width="782" height="590" key="find.popup" timestamp="1591549696096">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="377" y="122" width="782" height="590" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1591549696096" />
+  </component>
+</project>

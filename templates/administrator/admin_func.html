@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>功能页面</title>
+</head>
+<body>
+<div>
+     {% if request.session.is_on %}
+                  <div class="alert alert-warning">开机状态：ON</div>
+    {% else %}
+                <div class="alert alert-warning">开机状态：OFF</div>
+    {% endif %}
+    <button class="btn btn-default"><a href="/users/administrator/power_on/">开机</a></button>
+    <button onclick="query()">查看从控机状态</button>
+    <button><a href="/users/administrator/close/">关机</a></button>
+</div>
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script>
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+    </script>
+    <script type="text/javascript">
+        function query() {
+            $.ajax({
+                type:"get",
+                url:'http://127.0.0.1:8000/users/administrator/check_room_state/',
+                success:function (data) {
+                    alert(data["message"])
+                },
+                error:function () {
+                    alert("error!");
+                }
+            })
+        }
+    </script>
+</body>
+</html>

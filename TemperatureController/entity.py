@@ -5,8 +5,7 @@ import threading
 from typing import List, Dict, Optional
 
 from TemperatureController.models import DetailModel, Log
-from .tools import logger, room_ids, DBFacade, current_temp, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP,\
-    CHANGE_SPEED, STANDBY, RUNNING, STOPPED, AVAILABLE, CLOSED, SERVING, WAITING, LOW, NORMAL, HIGH
+from .tools import *
 
 
 class MasterMachine:
@@ -30,18 +29,21 @@ class MasterMachine:
 
     def __init__(self):
         """初始化主控机"""
-        self.__mode = No
+        self.__mode = COOL
         self.__status = STANDBY
-        self.__start_time = None
+        self.__start_time = datetime.datetime.now()
         self.__finish_time = None
-        self.__temp_low_limit = None
-        self.__temp_high_limit = None
-        self.__default_target_temp = None
-        self.__default_speed = None
-        self.__frequent = 0
-        self.__fee_rate = None
+        self.__temp_low_limit = TEMP_LIMT[COOL][0]
+        self.__temp_high_limit = TEMP_LIMT[COOL][1]
+        self.__default_target_temp = 22
+        self.__default_speed = 1
+        self.__frequent = 1
+        self.__fee_rate = (4, 5, 6)
         self.__rooms = []
+        for _ in room_ids:
+            self.__rooms.append(Room(_, self.default_target_temp, self.default_speed))
         logger.info('初始化主控机')
+        logger.info(str(self.__start_time) + ' 主控机启动')
 
     @classmethod
     def instance(cls):
@@ -52,32 +54,17 @@ class MasterMachine:
                     cls._instance = cls()
         return cls._instance
 
-    def set_para(self, mode: str, temp_low_limit: float, temp_high_limit: float,
-                 default_target_temp: float, default_speed: int, fee_rate: tuple, targetFeq: int) -> None:
-        """
-        设置运行参数
-        Args:
-            targetFeq: 刷新频率
-            mode: 运行模式
-            temp_low_limit: 最低温度
-            temp_high_limit: 最高温度
-            default_target_temp: 默认温度
-            default_speed: 默认风速
-            fee_rate: 费率
-        """
-        self.__mode = mode
-        self.__temp_low_limit = temp_low_limit
-        self.__temp_high_limit = temp_high_limit
-        self.__default_target_temp = default_target_temp
-        self.__default_speed = default_speed
-        self.__fee_rate = fee_rate
-        self.__frequent = targetFeq
-        for _ in room_ids:
-            self.__rooms.append(Room(_, self.default_target_temp, self.default_speed))
-        logger.info('设置主控机参数为: mode=' + self.__mode + ' temp_low_limit=' + str(self.__temp_low_limit) +
-                    ' temp_high_limit=' + str(self.__temp_high_limit) + ' default_target_temp=' +
-                    str(self.__default_target_temp) + ' default_speed=' + str(self.__default_speed) +
-                    ' fee_rate=' + str(self.__fee_rate))
+    def set_para(self, key: str, value: str) -> None:
+        if key == 'mode':
+            self.__mode = value
+            self.__temp_low_limit = TEMP_LIMT[value][0]
+            self.__temp_high_limit = TEMP_LIMT[value][1]
+            self.__default_target_temp = DEFAULT_TARGET_TEMP[value]
+        elif key == 'temp':
+            self.__default_target_temp = int(value)
+        elif key == 'frequent':
+            self.__frequent = int(value)
+        logger.info('修改主控机参数为:' + key + '=' + value)
 
     @property
     def mode(self):
@@ -117,11 +104,11 @@ class MasterMachine:
             raise RuntimeError('房间号不存在')
         return self.__rooms[room_ids.index(room_id)]
 
-    def turn_on(self) -> dict:
-        """启动主控机"""
-        self.__status = RUNNING
-        self.__start_time = datetime.datetime.now()
-        logger.info(str(self.__start_time) + ' 主控机启动')
+    # def turn_on(self) -> dict:
+    #     """启动主控机"""
+    #     self.__status = RUNNING
+    #     self.__start_time = datetime.datetime.now()
+    #     logger.info(str(self.__start_time) + ' 主控机启动')
 
     def turn_off(self) -> None:
         """关闭主控机"""
@@ -134,9 +121,6 @@ class MasterMachine:
     def get_detail(self, room_id: str):
         """获取指定房间的详单"""
         room = self.get_room(room_id)
-        if room.status != AVAILABLE:
-            logger.error('需先退房')
-            raise RuntimeError('需先退房')
 
         details = DBFacade.exec(DetailModel.objects.filter, room_id=room_id, start_time__gte=room.check_in_time,
                                 finish_time__lte=room.check_out_time)
@@ -165,9 +149,12 @@ class MasterMachine:
         logs = DBFacade.exec(Log.objects.filter, room_id=room_id, op_time__gte=start_time, op_time__lte=finish_time)
         duration = 0
         fee = 0.0
+        #温控请求起止时间（列出所有记录）、温控请求的起止温度及风量消耗大小（列出所有记录）、每次温控请求所需费用、当日所需总费用
+        dd=[]
         for d in details:
             duration += (d.finish_time - d.start_time).seconds
             fee += d.fee
+            dd.append([d.start_time,d.finish_time,d.start_temp,d.finish_temp,d.fee])
         on_off_times = 0
         temp_times = 0
         speed_times = 0
@@ -176,7 +163,14 @@ class MasterMachine:
             temp_times += 1 if l.operation == CHANGE_TEMP else 0
             speed_times += 1 if l.operation == CHANGE_SPEED else 0
         return Report(room_id, start_time, finish_time, duration, on_off_times,
-                      temp_times, speed_times, len(details), round(fee, 2))
+                      temp_times, speed_times, len(details), round(fee, 2),dd)
+
+    def get_main_status(self):
+        return {
+            'status': self.status,
+            'mode': self.mode,
+            'frequent': self.__frequent
+        }
 
     def get_slave_status(self, room) -> Dict:
         """获取指定从机的状态"""
@@ -190,7 +184,7 @@ class MasterMachine:
             'speed': room.current_speed,
             'service_time': room.service_time,
             'target_temper': room.target_temp,
-            'user_id':room.user_id,
+            'user_id': room.user_id,
             'fee': round(room.fee, 2),
             'fee_rate': self.__fee_rate[room.current_speed]
         }
@@ -447,10 +441,16 @@ class Detail:
                     '费用': str(round(detail.fee, 2))
                 }
             )
-        filename = room_id + '-' + check_in_time.strftime('%Y%m%d%H%M%S') + '-detail.json'
+        filename = room_id + '-' + check_in_time.strftime('%Y%m%d%H%M%S') + '-detail.txt'
 
         with open(filename, 'w') as f:
-            json.dump(file_dict, f, ensure_ascii=False)
+            f.write('房间号:'+file_dict['房间号： '])
+            for i in range(len(file_dict['detail'])):
+                f.write('  ')
+                f.write('part'+i)
+                for k,v in file_dict['detail'][i]:
+                    f.write(k+':'+v)
+            # json.dump(file_dict, f, ensure_ascii=False)
         logger.info('保存详单文件' + filename)
 
         return filename
@@ -542,10 +542,12 @@ class Report:
         __times_of_change_speed: 改变风速次数
         __number_of_detail: 详单条目数
         __fee: 总费用
+日报表结构和内容应至少包含：房间号、从控机开关机的次数、温控请求起止时间（列出所有记录）、温控请求的起止温度及风量消耗大小（列出所有记录）、
+每次温控请求所需费用、当日所需总费用
     """
 
     def __init__(self, room_id, start_time, finish_time, duration, on_off_times,
-                 temp_times, speed_times, n_details, fee):
+                 temp_times, speed_times, n_details, fee,details):
         """
         初始化报表
 
@@ -568,6 +570,7 @@ class Report:
         self.__times_of_change_temp = temp_times
         self.__times_of_change_speed = speed_times
         self.__number_of_detail = n_details
+        self.__details=details
         self.__fee = fee
         logger.info('新建报表(room_id=' + str(self.__room_id) + ' start_time=' + str(self.__start_time) +
                     ' finish_time=' + str(self.__finish_time))
@@ -618,11 +621,17 @@ class Report:
             '风速更改次数：': str(self.__times_of_change_speed),
             '包含详单个数：': str(self.__number_of_detail),
             '服务时间： ': str(self.__duration),
-            '费用：': str(round(self.__fee, 2))
+            '总费用：': str(round(self.__fee, 2))
         }
-        filename = self.__room_id + '-' + self.__start_time.strftime('%Y%m%d%H%M%S') + '-report.json'
+        filename = self.__room_id + '-' + self.__start_time.strftime('%Y%m%d%H%M%S') + '-report.txt'
         with open(filename, 'w') as f:
-            json.dump(report_dict, f, ensure_ascii=False)
+            for k,v in report_dict:
+                f.write(k+v)
+            for _ in self.__details:
+                f.write('开始时间：'+_[0])
+                f.write('结束时间：' + _[1])
+                f.write('开始温度：' + _[2])
+                f.write('结束温度：' + _[3])
+                f.write('此次服务费用：' + _[4])
         logger.info('保存报表文件' + filename)
-
         return filename

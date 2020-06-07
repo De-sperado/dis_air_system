@@ -13,8 +13,8 @@ current_temp = 30.0
 
 #工作模式
 No = '0'
-COOL = '1'
-HOT = '2'
+COOL = '制冷'
+HOT = '制热'
 
 #日志条目operation值
 POWER_ON = 'power on'
@@ -41,6 +41,10 @@ HIGH = 2
 
 #房间号
 room_ids = ('309c', '310c', '311c', '312c', 'f3')
+
+TEMP_LIMT={COOL:[25,30],HOT:[18,25]}
+
+DEFAULT_TARGET_TEMP={COOL:22,HOT:28}
 
 
 class RepeatTimer(Timer):

@@ -9,7 +9,7 @@ from typing import List, Tuple, Optional, Dict
 
 from TemperatureController.models import DetailModel, Log
 from .tools import logger, UPDATE_FREQUENCY, TEMPERATURE_CHANGE_RATE_PER_SEC, RepeatTimer, \
-    DBFacade, room_ids, MAX_QUEUE, MAX_WAITING_TIME, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP,\
+    DBFacade, room_ids, MAX_QUEUE, MAX_WAITING_TIME, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP, \
     CHANGE_SPEED, STANDBY, RUNNING, STOPPED, AVAILABLE, CLOSED, SERVING, WAITING, LOW, NORMAL, HIGH
 from TemperatureController.entity import MasterMachine, Detail, Invoice, Report, Room
 
@@ -104,7 +104,8 @@ class RunningSlaver:
         if self.start_time is not ...:
             detail = Detail(None, self.room.room_id, self.start_time, self.start_time +
                             datetime.timedelta(seconds=self.duration), self.target_speed,
-                            self.fee_rate, self.start_temp, self.room.current_temp, self.fee_since_start, self.room.user_id)
+                            self.fee_rate, self.start_temp, self.room.current_temp, self.fee_since_start,
+                            self.room.user_id)
             DBFacade.exec(DetailModel.objects.create, room_id=detail.room_id, start_time=detail.start_time,
                           finish_time=detail.finish_time, speed=detail.target_speed,
                           fee_rate=detail.fee_rate, start_temp=self.start_temp, finish_temp=self.room.current_temp,
@@ -196,7 +197,7 @@ class SlaverQueue:
         return reach_temp_services
 
     def dispatch(self):
-        for i in range(0, MAX_QUEUE):
+        for i in range(0, min(MAX_QUEUE, len(self.queue))):
             q = self.queue[i]
             if q.start_time is ...:
                 q.start()
@@ -207,8 +208,8 @@ class SlaverQueue:
                 service.finish()
                 self.queue.remove(service)
                 self.queue.append(service)
-                logger.info('服务队列：'+self.queue[0].room.room_id+self.queue[1].room.room_id+self.queue[2].room.room_id)
-
+                logger.info(
+                    '服务队列：' + self.queue[0].room.room_id + self.queue[1].room.room_id + self.queue[2].room.room_id)
 
     def get_service(self, room_id):
         for _ in self.__queue:
@@ -243,6 +244,10 @@ class Dispatcher:
             logger.info('房间' + service.room.room_id + '到达设定温度')
             service.room.status = STANDBY
         self.__slaver_queue.dispatch()
+        if self.__master_machine.status == RUNNING and len(self.__slaver_queue.queue) == 0:
+            self.__master_machine.status = STANDBY
+        elif self.__master_machine.status == STANDBY and len(self.__slaver_queue.queue) > 0:
+            self.__master_machine.status = RUNNING
 
     def reset(self):
         self.timer.cancel()
@@ -269,9 +274,21 @@ class SlaverService:
                     cls._instance = cls()
         return cls._instance
 
-    def get_current_fee(self, room_id: str) -> Dict:
+    def get_current_status(self, room_id: str) -> Dict:
         """获取指定从机当前费用"""
         return self.__master_machine.get_slave_status(self.__master_machine.get_room(room_id))
+
+    def login(self, room_id: str, user_id: str):
+        room = self.__master_machine.get_room(room_id)
+        if room.user_id == user_id:
+            return {
+                'message': 'OK',
+                'user_id': user_id,
+                'room_id': room_id
+            }
+        else:
+            logger.error('房间号与用户不匹配')
+            raise RuntimeError('房间号与用户不匹配')
 
     def slave_machine_power_on(self, room_id: str) -> Tuple[float, int]:
         """
@@ -398,42 +415,28 @@ class AdministratorService:
 
     def init_master_machine(self) -> None:
         """初始化主控机"""
-        self.__master_machine = MasterMachine.instance()
 
-    def set_master_machine_param(self, mode: str, temp_low_limit: float, temp_high_limit: float,
-                                 default_target_temp: float, default_speed: int, fee_rate: tuple,
-                                 targetFeq: int) -> None:
+    def set_master_machine_param(self, key: str, value: str) -> None:
         """设置主控机参数"""
-        if self.__master_machine is ...:
-            logger.error('主控机未初始化')
-            raise RuntimeError('主控机未初始化')
-        print(mode)
-        if mode not in (COOL, HOT):
-            logger.error('mode不存在')
-            raise RuntimeError('mode不存在')
-        if not temp_low_limit <= default_target_temp <= temp_high_limit:
-            logger.error('目标温度不合法')
-            raise RuntimeError('目标温度不合法')
-        if default_speed not in (LOW, NORMAL, HIGH):
-            logger.error('speed不存在')
-            raise RuntimeError('speed不存在')
-        if len(fee_rate) != 3:
-            logger.error('费率阶梯不符')
-            raise RuntimeError('费率阶梯不符')
-        self.__master_machine.set_para(mode, temp_low_limit, temp_high_limit, default_target_temp,
-                                       default_speed, fee_rate, targetFeq)
+        # if mode not in (COOL, HOT):
+        #     logger.error('mode不存在')
+        #     raise RuntimeError('mode不存在')
+        # if not temp_low_limit <= default_target_temp <= temp_high_limit:
+        #     logger.error('目标温度不合法')
+        #     raise RuntimeError('目标温度不合法')
+        # if len(fee_rate) != 3:
+        #     logger.error('费率阶梯不符')
+        #     raise RuntimeError('费率阶梯不符')
+        # self.__master_machine.set_para(mode, temp_low_limit, temp_high_limit, default_target_temp,
+        #                                default_speed, fee_rate, targetFeq)
+        self.__master_machine.set_para(key, value)
 
-    def start_master_machine(self) -> dict:
+    def start_master_machine(self):
         """
         启动主控机
 
-        Returns:
-            temp_low_limit: 最低温度
-            temp_high_limit: 最高温度
         """
-        if self.__master_machine is ...:
-            logger.error('主控机未初始化')
-            raise RuntimeError('主控机未初始化')
+        self.__master_machine = MasterMachine.instance()
         Dispatcher.instance().timer.start()
         self.__master_machine.turn_on()
 
@@ -466,6 +469,9 @@ class AdministratorService:
             logger.error('主控机未初始化')
             raise RuntimeError('主控机未初始化')
         return self.__master_machine.get_all_status()
+
+    def get_main_status(self):
+        return self.__master_machine.get_main_status()
 
     def check_in(self, room_id: str, user_id: str):
         if self.__master_machine is ...:
