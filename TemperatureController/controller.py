@@ -1,7 +1,7 @@
 import threading
 from TemperatureController.service import (
     AdministratorService,  DetailService,
-    InvoiceService, ReportService, SlaverService)
+    InvoiceService, ReportService, SlaveService)
 from .tools import logger
 
 '''用户类别宏定义'''
@@ -20,7 +20,7 @@ class MasterController:
     def __init__(self):
         self.__adminService = AdministratorService.instance()
         self.__masterStart = False
-        self.__slaverService=SlaverService.instance()
+        self.__slaverService=SlaveService.instance()
         logger.info('初始化MasterController')
 
     @classmethod
@@ -41,7 +41,7 @@ class MasterController:
             self.__adminService.start_master_machine()
             self.__masterStart = True
         elif operation == 'set param':
-            self.__adminService.set_master_machine_param(
+            self.__adminService.set_param(
                 kwargs.get('key'), kwargs.get('value')
             )
         elif operation == 'turn off':
@@ -76,7 +76,7 @@ class SlaveController:
         return cls._instance
 
     def __init__(self):
-        self.__slaverService = SlaverService.instance()
+        self.__slaverService = SlaveService.instance()
         self.__masterController = MasterController.instance()
         logger.info('初始化SlaveController')
 
@@ -98,10 +98,10 @@ class SlaveController:
             target_speed = kwargs.get('target_speed')
             self.__slaverService.change_speed(room_id, target_speed)
         elif operation == 'power on':
-            target_temp, speed = self.__slaverService.slave_machine_power_on(room_id)
-            return self.__slaverService.init_temp_and_speed(room_id, target_temp, speed)
+            target_temp, speed = self.__slaverService.turn_on(room_id)
+            return self.__slaverService.init(room_id, target_temp, speed)
         elif operation == 'power off':
-            self.__slaverService.slave_machine_power_off(room_id)
+            self.__slaverService.turn_off(room_id)
         elif operation == 'change mode':
             pass
         else:
@@ -135,12 +135,12 @@ class InfoController:
         room_id = kwargs.get('room_id')
         if file_type == 'report':
             report_service = ReportService.instance()
-            qtype = kwargs.get('qtype')
+            query_type = kwargs.get('query_type')
             date = kwargs.get('date')
             if operation == 'query':
-                return report_service.get_report(room_id, qtype, date)
+                return report_service.get_report(room_id, query_type, date)
             elif operation == 'print':
-                return report_service.print_report(room_id, qtype, date)
+                return report_service.print_report(room_id, query_type, date)
             else:
                 logger.error('不支持的操作')
                 raise RuntimeError('不支持的操作')

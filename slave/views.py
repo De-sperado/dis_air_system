@@ -112,7 +112,7 @@ def change_speed(request):
             'mode': mode,
             'current_temper': round(room.current_temp, 2) if room.current_temp is not None else None,
             'speed': room.current_speed,
-            'service_time': room.service_time,
+            'running_time': room.running_time,
             'target_temper': room.target_temp,
             'user_id': room.user_id,
             'fee': round(room.fee, 2),

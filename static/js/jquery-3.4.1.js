@@ -4137,7 +4137,7 @@ Data.prototype = {
 
 				// If key is an array of keys...
 				// We always set camelCase keys, so remove that.
-				key = key.map( camelCase );
+				key = key.param( camelCase );
 			} else {
 				key = camelCase( key );
 
@@ -6928,9 +6928,9 @@ Tween.prototype = {
 		var eased,
 			hooks = Tween.propHooks[ this.prop ];
 
-		if ( this.options.duration ) {
+		if ( this.options.running_time ) {
 			this.pos = eased = jQuery.easing[ this.easing ](
-				percent, this.options.duration * percent, 0, 1, this.options.duration
+				percent, this.options.running_time * percent, 0, 1, this.options.running_time
 			);
 		} else {
 			this.pos = eased = percent;
@@ -7303,11 +7303,11 @@ function Animation( elem, properties, options ) {
 				return false;
 			}
 			var currentTime = fxNow || createFxNow(),
-				remaining = Math.max( 0, animation.startTime + animation.duration - currentTime ),
+				remaining = Math.max( 0, animation.startTime + animation.running_time - currentTime ),
 
 				// Support: Android 2.3 only
 				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
-				temp = remaining / animation.duration || 0,
+				temp = remaining / animation.running_time || 0,
 				percent = 1 - temp,
 				index = 0,
 				length = animation.tweens.length;
@@ -7342,7 +7342,7 @@ function Animation( elem, properties, options ) {
 			originalProperties: properties,
 			originalOptions: options,
 			startTime: fxNow || createFxNow(),
-			duration: options.duration,
+			running_time: options.running_time,
 			tweens: [],
 			createTween: function( prop, end ) {
 				var tween = jQuery.Tween( elem, animation.opts, prop, end,
@@ -7457,21 +7457,21 @@ jQuery.speed = function( speed, easing, fn ) {
 	var opt = speed && typeof speed === "object" ? jQuery.extend( {}, speed ) : {
 		complete: fn || !fn && easing ||
 			isFunction( speed ) && speed,
-		duration: speed,
+		running_time: speed,
 		easing: fn && easing || easing && !isFunction( easing ) && easing
 	};
 
 	// Go to the end state if fx are off
 	if ( jQuery.fx.off ) {
-		opt.duration = 0;
+		opt.running_time = 0;
 
 	} else {
-		if ( typeof opt.duration !== "number" ) {
-			if ( opt.duration in jQuery.fx.speeds ) {
-				opt.duration = jQuery.fx.speeds[ opt.duration ];
+		if ( typeof opt.running_time !== "number" ) {
+			if ( opt.running_time in jQuery.fx.speeds ) {
+				opt.running_time = jQuery.fx.speeds[ opt.running_time ];
 
 			} else {
-				opt.duration = jQuery.fx.speeds._default;
+				opt.running_time = jQuery.fx.speeds._default;
 			}
 		}
 	}

@@ -51,12 +51,12 @@ if (typeof jQuery === 'undefined') {
   }
 
   // http://blog.alexmaccaw.com/css-transitions
-  $.fn.emulateTransitionEnd = function (duration) {
+  $.fn.emulateTransitionEnd = function (running_time) {
     var called = false
     var $el = this
     $(this).one('bsTransitionEnd', function () { called = true })
     var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
-    setTimeout(callback, duration)
+    setTimeout(callback, running_time)
     return this
   }
 
@@ -1940,7 +1940,7 @@ if (typeof jQuery === 'undefined') {
 
     this.$body
       .find(this.selector)
-      .map(function () {
+      .param(function () {
         var $el   = $(this)
         var href  = $el.data('target') || $el.attr('href')
         var $href = /^#./.test(href) && $(href)

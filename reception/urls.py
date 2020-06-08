@@ -19,7 +19,7 @@ from reception import views
 
 app_name = 'reception'
 urlpatterns = [
-    url(r'^func/',views.func),
+    url(r'^fun/',views.func),
     url(r'^query_invoice', views.query_invoice),
     url(r'^print_invoice', views.print_invoice),
     url(r'^query_detail', views.query_detail),

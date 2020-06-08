@@ -27,7 +27,7 @@ CHANGE_SPEED = 'change speed'
 #主控机状态
 STANDBY = '待机'
 RUNNING = '运行中'
-STOPPED = '已关机'
+STOPPED = '关机'
 
 #从控机工作状态
 AVAILABLE = '未入住'

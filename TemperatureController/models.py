@@ -21,7 +21,7 @@ class DetailModel(models.Model):
     user_id = models.CharField(max_length=20)
 
 
-class Log(models.Model):
+class LogModel(models.Model):
     """操作日志"""
     room_id = models.CharField(max_length=16)
     operation = models.CharField(max_length=32)

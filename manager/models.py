@@ -16,6 +16,6 @@ class ReportForm(forms.Form):
         ('f3', 'f3'),
     )
 
-    qtype = forms.ChoiceField(label='报表类型', choices=report_type)
+    query_type = forms.ChoiceField(label='报表类型', choices=report_type)
     room_id = forms.ChoiceField(label='房间号', choices=room)
     date = forms.CharField(label='起始时间', widget=forms.TextInput(attrs={'class': 'form-control'}))

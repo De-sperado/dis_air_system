@@ -1,6 +1,6 @@
 
 from TemperatureController.controller import InfoController,MasterController
-from tools import logger
+from TemperatureController.tools import logger
 from django.http import JsonResponse, StreamingHttpResponse
 from django.shortcuts import render
 
@@ -96,5 +96,5 @@ def print_detail(request):
         return JsonResponse({'message': str(error)})
 
 def func(request):
-    return render(request, 'func.html')
+    return render(request, 'reception/dashboard.html')
 

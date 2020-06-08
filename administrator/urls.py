@@ -19,7 +19,7 @@ from administrator import views
 
 app_name = 'administrator'
 urlpatterns = [
-    url(r'^func/',views.func),
+    url(r'^fun/',views.fun),
     url(r'^power_on', views.power_on),
     url(r'^init_param', views.init_param),
     #url(r'^start_up', views.start_up),

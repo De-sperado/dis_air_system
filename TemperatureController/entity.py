@@ -4,7 +4,7 @@ import json
 import threading
 from typing import List, Dict, Optional
 
-from TemperatureController.models import DetailModel, Log
+from TemperatureController.models import DetailModel, LogModel
 from .tools import *
 
 
@@ -16,8 +16,8 @@ class MasterMachine:
         __mode:             工作模式
         __status:           工作状态
         __start_time:       开机时间，在start()方法里设置
-        __temp_low_limit:   最低温度，在set_para()方法里设置
-        __temp_high_limit:  最高温度，在set_para()方法里设置
+        __lowest_temp:   最低温度，在set_para()方法里设置
+        __highest_temp:  最高温度，在set_para()方法里设置
         __default_target_temp: 默认温度
         __default_speed:     默认风速
         __fee_rate:         费率，tuple类型，对应每一级风速的费用
@@ -33,8 +33,8 @@ class MasterMachine:
         self.__status = CLOSED
         self.__start_time = None
         self.__finish_time = None
-        self.__temp_low_limit = TEMP_LIMT[COOL][0]
-        self.__temp_high_limit = TEMP_LIMT[COOL][1]
+        self.__lowest_temp = TEMP_LIMT[COOL][0]
+        self.__highest_temp = TEMP_LIMT[COOL][1]
         self.__default_target_temp = 22
         self.__default_speed = 1
         self.__frequent = 1
@@ -56,8 +56,8 @@ class MasterMachine:
     def set_para(self, key: str, value: str) -> None:
         if key == 'mode':
             self.__mode = value
-            self.__temp_low_limit = TEMP_LIMT[value][0]
-            self.__temp_high_limit = TEMP_LIMT[value][1]
+            self.__lowest_temp = TEMP_LIMT[value][0]
+            self.__highest_temp = TEMP_LIMT[value][1]
             self.__default_target_temp = DEFAULT_TARGET_TEMP[value]
         elif key == 'temp':
             self.__default_target_temp = int(value)
@@ -78,16 +78,16 @@ class MasterMachine:
         return self.__start_time
 
     @property
-    def temp_low_limit(self):
-        return self.__temp_low_limit
+    def lowest_temp(self):
+        return self.__lowest_temp
 
     @status.setter
     def status(self, status):
         self.__status = status
 
     @property
-    def temp_high_limit(self):
-        return self.__temp_high_limit
+    def highest_temp(self):
+        return self.__highest_temp
 
     @property
     def default_target_temp(self):
@@ -149,13 +149,13 @@ class MasterMachine:
         """获取指定房间的报表"""
         details = DBFacade.exec(DetailModel.objects.filter, room_id=room_id, start_time__gte=start_time,
                                 finish_time__lte=finish_time)
-        logs = DBFacade.exec(Log.objects.filter, room_id=room_id, op_time__gte=start_time, op_time__lte=finish_time)
-        duration = 0
+        logs = DBFacade.exec(LogModel.objects.filter, room_id=room_id, op_time__gte=start_time, op_time__lte=finish_time)
+        running_time = 0
         fee = 0.0
         # 温控请求起止时间（列出所有记录）、温控请求的起止温度及风量消耗大小（列出所有记录）、每次温控请求所需费用、当日所需总费用
         dd = []
         for d in details:
-            duration += (d.finish_time - d.start_time).seconds
+            running_time += (d.finish_time - d.start_time).seconds
             fee += d.fee
             dd.append([d.start_time, d.finish_time, d.start_temp, d.finish_temp, d.fee])
         on_off_times = 0
@@ -165,7 +165,7 @@ class MasterMachine:
             on_off_times += 1 if l.operation == POWER_ON or l.operation == POWER_OFF else 0
             temp_times += 1 if l.operation == CHANGE_TEMP else 0
             speed_times += 1 if l.operation == CHANGE_SPEED else 0
-        return Report(room_id, start_time, finish_time, duration, on_off_times,
+        return Report(room_id, start_time, finish_time, running_time, on_off_times,
                       temp_times, speed_times, len(details), round(fee, 2), dd)
 
     def get_main_status(self):
@@ -185,7 +185,7 @@ class MasterMachine:
             'mode': mode,
             'current_temper': round(room.current_temp, 2) if room.current_temp is not None else None,
             'speed': room.current_speed,
-            'service_time': room.service_time,
+            'running_time': room.running_time,
             'target_temper': room.target_temp,
             'user_id': room.user_id,
             'fee': round(room.fee, 2),
@@ -193,7 +193,7 @@ class MasterMachine:
             'energy': room.energy
         }
 
-    def get_all_status(self) -> List[dict]:
+    def get_all_slave_status(self) -> List[dict]:
         """获取主机关联的所有从机的状态"""
         slave_status = []
         for room in self.__rooms:
@@ -213,7 +213,7 @@ class Room:
         __current_speed: 房间当前风速
         __target_temp: 房间目标温度
         __fee: 房间当前费用
-        __service_time: 房间服务时长
+        __running_time: 房间服务时长
         __check_in_time: 入住时间
         __check_out_time: 退房时间
     """
@@ -235,7 +235,7 @@ class Room:
         self.__fee = 0
         self.__energy = 0
         self.__user_id = ""
-        self.__service_time = 0
+        self.__running_time = 0
         self.__check_in_time = ...  # type: datetime.datetime
         self.__check_out_time = ...  # type: datetime.datetime
         logger.info('初始化房间' + room_id)
@@ -264,7 +264,7 @@ class Room:
         self.__status = CLOSED
         self.__fee = 0
         self.__energy = 0
-        self.__service_time = 0
+        self.__running_time = 0
         self.__user_id = user_id
         self.__check_in_time = datetime.datetime.now()
         logger.info('房间' + self.__room_id + '用户' + self.__user_id + '入住')
@@ -330,12 +330,12 @@ class Room:
         self.__energy = energy
 
     @property
-    def service_time(self):
-        return self.__service_time
+    def running_time(self):
+        return self.__running_time
 
-    @service_time.setter
-    def service_time(self, service_time):
-        self.__service_time = service_time
+    @running_time.setter
+    def running_time(self, running_time):
+        self.__running_time = running_time
 
     @property
     def check_in_time(self):
@@ -558,7 +558,7 @@ class Report:
         __room_id: 房间号
         __start_time: 起 始时间
         __finish_time: 终止时间
-        __duration: 服务时长
+        __running_time: 服务时长
         __times_of_on_off: 开关机次数
         __times_of_change_temp: 改变温度次数
         __times_of_change_speed: 改变风速次数
@@ -568,7 +568,7 @@ class Report:
 每次温控请求所需费用、当日所需总费用
     """
 
-    def __init__(self, room_id, start_time, finish_time, duration, on_off_times,
+    def __init__(self, room_id, start_time, finish_time, running_time, on_off_times,
                  temp_times, speed_times, n_details, fee, details):
         """
         初始化报表
@@ -577,7 +577,7 @@ class Report:
             room_id: 房间号
             start_time: 起始时间
             finish_time: 终止时间
-            duration: 服务时长
+            running_time: 服务时长
             on_off_times: 开关机次数
             temp_times: 改变温度次数
             speed_times: 改变风速次数
@@ -587,7 +587,7 @@ class Report:
         self.__room_id = room_id
         self.__start_time = start_time
         self.__finish_time = finish_time
-        self.__duration = duration
+        self.__running_time = running_time
         self.__times_of_on_off = on_off_times
         self.__times_of_change_temp = temp_times
         self.__times_of_change_speed = speed_times
@@ -611,8 +611,8 @@ class Report:
         return self.__finish_time
 
     @property
-    def duration(self):
-        return self.__duration
+    def running_time(self):
+        return self.__running_time
 
     @property
     def on_off_times(self):
@@ -643,7 +643,7 @@ class Report:
             '温度更改次数：': str(self.__times_of_change_temp),
             '风速更改次数：': str(self.__times_of_change_speed),
             '包含详单个数：': str(self.__number_of_detail),
-            '服务时间： ': str(self.__duration),
+            '服务时间： ': str(self.__running_time),
             '总费用：': str(round(self.__fee, 2)),
             '总能量：':str(round(self.__energy, 2))
         }

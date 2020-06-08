@@ -76,10 +76,10 @@ class ControllerTest(TestCase):
         print(filename)
         # 获取报表
         report = infoController.control(file_type='report', operation='query', room_id='309c',
-                                    date=datetime.datetime.now(), qtype='day')
+                                    date=datetime.datetime.now(), query_type='day')
         print(report)
         filename = infoController.control(file_type='report', operation='print', room_id='309c',
-                                      date=datetime.datetime.now(), qtype='day')
+                                      date=datetime.datetime.now(), query_type='day')
         print(filename)
         # 主机关机
         masterController.control(operation='turn off')

@@ -6,22 +6,28 @@ import django.utils.timezone as timezone
 
 class Client(models.Model):
     '''客户表'''
-
+    room = (
+        ('309c', '309c'),
+        ('310c', '310c'),
+        ('311c', '311c'),
+        ('312c', '312c'),
+        ('f3', 'f3'),
+    )
     identity = models.CharField(max_length=128, unique=True)
-    roomId = models.ForeignKey('room',on_delete=models.CASCADE,null=False)
+    roomId = models.CharField(max_length=128, choices=room, default='309c')
     name = models.CharField(max_length=20)
     c_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.roomId+':'+self.name
+        return self.roomId
 
     class Meta:
         ordering = ['c_time']
         verbose_name = '客户'
         verbose_name_plural = '客户'
 
-class room(models.Model):
-    '''房间表'''
+'''class room(models.Model):
+  
 
     roomId = models.CharField(max_length=10,unique=True)
     avail = models.BooleanField(default=True)
@@ -34,7 +40,7 @@ class room(models.Model):
         ordering = ['c_time']
         verbose_name = '房间'
         verbose_name_plural = '房间'
-
+'''
 class ClientForm(forms.Form):
 
     identity = forms.CharField(label="身份证号", max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))

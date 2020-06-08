@@ -21,7 +21,7 @@ app_name = 'users'
 urlpatterns = [
     url(r'^administrator/', include('administrator.urls')),
     url(r'^manager/', include('manager.urls')),
-    url(r'^client/', views.client_func),
+    url(r'^client/',include('client.urls')),
     url(r'reception/', include('reception.urls')),
     #url(r'^detail/', lo.query_detail),
 ]

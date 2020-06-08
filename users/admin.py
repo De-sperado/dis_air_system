@@ -3,4 +3,4 @@ from . import models
 
 
 admin.site.register(models.Client)
-admin.site.register(models.room)
+#admin.site.register(models.room)

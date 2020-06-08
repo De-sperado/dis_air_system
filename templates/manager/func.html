@@ -10,11 +10,11 @@
     <form class='form-login' id="mainform" action="/users/manager/query_report/" method="post">
               {% if error %}
                   <div class="alert alert-warning">{{ error }}</div>
-    {% endif %}
+        {% endif %}
         {% csrf_token %}
               <div class="form-group">
-                  {{ report_form.qtype.label_tag }}
-                  {{ report_form.qtype}}
+                  {{ report_form.query_type.label_tag }}
+                  {{ report_form.query_type}}
               </div>
               <div class="form-group">
                {{ report_form.room_id.label_tag }}

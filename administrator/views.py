@@ -2,21 +2,26 @@ from django.shortcuts import render,redirect
 from django.http import JsonResponse
 
 from TemperatureController.controller import MasterController
-from tools import logger
+from TemperatureController.tools import logger
 from .models import ParaForm
 
-# Create your views here.
-def func(request):
-    return render(request,'administrator/admin_func.html')
+# # Create your views here.
+# def func(request):
+#     try:
+#         controller = MasterController.instance()
+#         controller.control(operation='get main ')
+#         para_form = ParaForm()
+#         return render(request,'administrator/init.html',locals())
+#     except RuntimeError as error:
+#         return JsonResponse({'message': str(error)})
+#     return render(request,'administrator/dashboard.html')
 #TODO:
 def power_on(request):
-    try:
-        controller = MasterController.instance()
-        controller.control(operation='turn on')
-        para_form = ParaForm()
-        return render(request,'administrator/init.html',locals())
-    except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+    controller = MasterController.instance()
+    controller.control(operation='turn on')
+    content = {'message': 'OK', 'result': controller.control(operation='get main status')}
+    return render(request,'administrator/dashboard.html',locals())
+
 
 #TODO:这个函数修改参数 传入参数key 和value   key可以为 mode temp frequent   value为目标值
 def set_param(request):
@@ -46,7 +51,7 @@ def init_param(request):
             try:
                 controller = MasterController.instance()
                 controller.control(operation='set param', mode=mode_get,
-                                    temp_low_limit=lowest_temper_get, temp_high_limit=highest_temper_get,
+                                    lowest_temp=lowest_temper_get, highest_temp=highest_temper_get,
                                     default_target_temp=default_temper_get,
                                     default_speed=default_speed_get,
                                     fee_rate=(low_speed_fee_get, middle_speed_fee_get, high_speed_fee_get),
@@ -73,7 +78,8 @@ def check_room_state(request):
     try:
         controller = MasterController.instance()
         content = {'message': 'OK', 'result': controller.control(operation='get status')}
-        return JsonResponse(content)
+        print(content)
+        return render(request,'administrator/slavers_status.html',locals())
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 
@@ -85,20 +91,17 @@ result为 {
             'frequent': self.__frequent
         }
 '''
-def get_main_status(request):
+def fun(request):
     try:
         controller = MasterController.instance()
         content = {'message': 'OK', 'result': controller.control(operation='get main status')}
-        return JsonResponse(content)
+        print(content)
+        return render(request,'administrator/dashboard.html',locals())
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 
 def close(request):
-    try:
-        controller = MasterController.instance()
-        controller.control( operation='turn off')
-        #content = {'message': 'OK', 'result': None}
-        request.session['is_on'] = False
-        return redirect('/users/administrator/func/')
-    except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+    controller = MasterController.instance()
+    controller.control( operation='turn off')
+    content = {'message': 'OK', 'result': controller.control(operation='get main status')}
+    return render(request, 'administrator/dashboard.html', locals())
