@@ -2569,3 +2569,684 @@ django.template.exceptions.TemplateDoesNotExist: /users/manager/func/
 2020-06-07 22:01:10,557 [WARNING] [Thread-5] [E:\anaconda\lib\site-packages\django\core\servers\basehttp.py:157] - "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 404 2411
 2020-06-07 22:01:10,587 [WARNING] [Thread-5] [E:\anaconda\lib\site-packages\django\utils\log.py:228] - Not Found: /static/bootstrap-3.3.7-dist/js/bootstrap.min.js
 2020-06-07 22:01:10,591 [WARNING] [Thread-5] [E:\anaconda\lib\site-packages\django\core\servers\basehttp.py:157] - "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 404 2405
+2020-06-08 09:35:34,726 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:35:34,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间309c
+2020-06-08 09:35:34,795 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间310c
+2020-06-08 09:35:34,796 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间311c
+2020-06-08 09:35:34,796 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间312c
+2020-06-08 09:35:34,796 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间f3
+2020-06-08 09:35:34,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:35:34,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:46] - 2020-06-08 09:35:34.790702 主控机启动
+2020-06-08 09:35:34,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:35:34,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:35:34,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:35:34,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:35:34,799 [ERROR] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:62] - 不支持的操作
+2020-06-08 09:36:33,764 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:36:33,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间309c
+2020-06-08 09:36:33,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间310c
+2020-06-08 09:36:33,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间311c
+2020-06-08 09:36:33,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间312c
+2020-06-08 09:36:33,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:238] - 初始化房间f3
+2020-06-08 09:36:33,766 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:36:33,766 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:46] - 2020-06-08 09:36:33.765438 主控机启动
+2020-06-08 09:36:33,766 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:36:33,767 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:36:33,768 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:36:33,768 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:44:34,319 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:44:34,320 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:44:34,320 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:44:34,320 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:44:34,320 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:44:34,321 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:44:34,321 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:44:34,321 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:44:34,322 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:44:34,322 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:44:34,322 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:44:34,323 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:44:34.323547 主控机启动
+2020-06-08 09:44:34,323 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:44:34,323 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:45:42,528 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:45:42,529 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:45:42,529 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:45:42,529 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:45:42,529 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:45:42,529 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:45:42,530 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:45:42,530 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:45:42,530 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:45:42,530 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:45:42,531 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:45:42,531 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:45:42.531254 主控机启动
+2020-06-08 09:45:42,532 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:45:42,532 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:45:42,532 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:197] - 获取所有从机状态
+2020-06-08 09:45:42,637 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 09:45:42,637 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间309c用户shit入住
+2020-06-08 09:45:42,638 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间311c用户hhh入住
+2020-06-08 09:45:42,639 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间310c用户f3入住
+2020-06-08 09:45:42,639 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间312c用户nn入住
+2020-06-08 09:45:42,640 [ERROR] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:305] - 房间号与用户不匹配
+2020-06-08 09:46:25,772 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:46:25,773 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:46:25,773 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:46:25,773 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:46:25,773 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:46:25,774 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:46:25,774 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:46:25,774 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:46:25,774 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:46:25,775 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:46:25,775 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:46:25,776 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:46:25.775871 主控机启动
+2020-06-08 09:46:25,776 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:46:25,776 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:46:25,776 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:197] - 获取所有从机状态
+2020-06-08 09:46:25,777 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 09:46:25,778 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间309c用户shit入住
+2020-06-08 09:46:25,782 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间311c用户hhh入住
+2020-06-08 09:46:25,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间310c用户f3入住
+2020-06-08 09:46:25,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:268] - 房间312c用户nn入住
+2020-06-08 09:46:25,793 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:273] - 房间309c开机
+2020-06-08 09:46:25,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:46:25,801 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 09:46:25,805 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:46:25,806 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:273] - 房间311c开机
+2020-06-08 09:46:25,811 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:46:25,812 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 09:46:25,815 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:46:25,816 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:273] - 房间310c开机
+2020-06-08 09:46:25,819 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:46:25,819 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 09:46:25,820 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:46:25,821 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:273] - 房间312c开机
+2020-06-08 09:46:25,831 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:46:25,831 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:46:30,834 [ERROR] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:372] - 目标温度不合法
+2020-06-08 09:48:48,924 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:48:48,925 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:48:48,925 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:48:48,925 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:48:48,926 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:48:48,926 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:48:48,927 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:48:48,927 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:48:48,927 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:48:48,928 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:48:48,928 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:48:48,929 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:48:48.929021 主控机启动
+2020-06-08 09:48:48,929 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:48:48,929 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:48:48,930 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:197] - 获取所有从机状态
+2020-06-08 09:48:48,930 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 09:48:48,931 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间309c用户shit入住
+2020-06-08 09:48:48,932 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间311c用户hhh入住
+2020-06-08 09:48:48,941 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间310c用户f3入住
+2020-06-08 09:48:48,944 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间312c用户nn入住
+2020-06-08 09:48:48,945 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:276] - 房间309c开机
+2020-06-08 09:48:48,948 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:48:48,950 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 09:48:48,953 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:48:48,954 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:276] - 房间311c开机
+2020-06-08 09:48:48,958 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:48:48,961 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 09:48:48,965 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:48:48,966 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:276] - 房间310c开机
+2020-06-08 09:48:48,968 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:48:48,969 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 09:48:48,970 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:48:48,979 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:276] - 房间312c开机
+2020-06-08 09:48:48,983 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:48:48,983 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:48:53,991 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 09:48:53,993 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 09:48:53,995 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 09:48:53,997 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 09:49:13,997 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:390] - 新建详单(room_id=309c start_time=2020-06-08 09:48:48.950962 finish_time=2020-06-08 09:48:49.950962user_id=shit
+2020-06-08 09:49:13,999 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 09:49:14,000 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 09:49:14,002 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 09:49:18,993 [ERROR] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:108] - 不支持的操作
+2020-06-08 09:52:06,789 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:52:06,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:52:06,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:52:06,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:52:06,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:52:06,791 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:52:06,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:52:06,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:52:06,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:52:06,793 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:52:06,793 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:52:06,794 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:52:06.794545 主控机启动
+2020-06-08 09:52:06,794 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:52:06,795 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:52:06,796 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:197] - 获取所有从机状态
+2020-06-08 09:52:06,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 09:52:06,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:272] - 房间309c用户shit入住
+2020-06-08 09:52:06,807 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:272] - 房间311c用户hhh入住
+2020-06-08 09:52:06,808 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:272] - 房间310c用户f3入住
+2020-06-08 09:52:06,812 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:272] - 房间312c用户nn入住
+2020-06-08 09:52:06,812 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:277] - 房间309c开机
+2020-06-08 09:52:06,817 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:52:06,818 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 09:52:06,821 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:52:06,822 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:277] - 房间311c开机
+2020-06-08 09:52:06,829 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:52:06,830 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 09:52:06,832 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:52:06,833 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:277] - 房间310c开机
+2020-06-08 09:52:06,836 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:52:06,837 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 09:52:06,838 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:52:06,843 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:277] - 房间312c开机
+2020-06-08 09:52:06,848 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:52:06,849 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:52:11,853 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 09:52:11,855 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 09:52:11,858 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 09:52:11,859 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 09:52:31,860 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:391] - 新建详单(room_id=309c start_time=2020-06-08 09:52:06.818482 finish_time=2020-06-08 09:52:07.818482user_id=shit
+2020-06-08 09:52:31,862 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 09:52:31,862 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 09:52:31,864 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 09:52:36,887 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 09:52:36,888 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:282] - 房间309c关机
+2020-06-08 09:52:36,890 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:292] - 房间309c退房
+2020-06-08 09:52:36,890 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 09:52:36,890 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 09:52:36,893 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:388] - 读取详单1
+2020-06-08 09:52:36,905 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:388] - 读取详单1
+2020-06-08 09:56:30,398 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 09:56:30,399 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间309c
+2020-06-08 09:56:30,400 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间310c
+2020-06-08 09:56:30,400 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间311c
+2020-06-08 09:56:30,400 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间312c
+2020-06-08 09:56:30,400 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:237] - 初始化房间f3
+2020-06-08 09:56:30,400 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 09:56:30,401 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 09:56:30,401 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 09:56:30,401 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 09:56:30,401 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 09:56:30,402 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:110] - 2020-06-08 09:56:30.402626 主控机启动
+2020-06-08 09:56:30,402 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 09:56:30,403 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 09:56:30,403 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:197] - 获取所有从机状态
+2020-06-08 09:56:30,403 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 09:56:30,404 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:266] - 房间309c用户shit入住
+2020-06-08 09:56:30,405 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:266] - 房间311c用户hhh入住
+2020-06-08 09:56:30,405 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:266] - 房间310c用户f3入住
+2020-06-08 09:56:30,406 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:266] - 房间312c用户nn入住
+2020-06-08 09:56:30,407 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间309c开机
+2020-06-08 09:56:30,424 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:56:30,428 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 09:56:30,429 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:56:30,434 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间311c开机
+2020-06-08 09:56:30,437 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:56:30,441 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 09:56:30,447 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:56:30,448 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间310c开机
+2020-06-08 09:56:30,457 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:56:30,457 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 09:56:30,459 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:56:30,463 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:271] - 房间312c开机
+2020-06-08 09:56:30,472 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 09:56:30,473 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 09:56:35,484 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 09:56:35,486 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 09:56:35,488 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 09:56:35,491 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 09:56:55,491 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:393] - 新建详单(room_id=309c start_time=2020-06-08 09:56:30.428555 finish_time=2020-06-08 09:56:31.428555user_id=shit
+2020-06-08 09:56:55,493 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 09:56:55,494 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 09:56:55,497 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 09:57:00,586 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 09:57:00,625 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:276] - 房间309c关机
+2020-06-08 09:57:00,673 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:286] - 房间309c退房
+2020-06-08 09:57:00,675 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 09:57:00,688 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 09:57:00,704 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:390] - 读取详单1
+2020-06-08 09:57:00,736 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:390] - 读取详单1
+2020-06-08 10:00:02,757 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 10:00:02,757 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:00:02,757 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:00:02,758 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:00:02,758 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:00:02,758 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:00:02,758 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:00:02,759 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 10:00:02,759 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 10:00:02,759 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 10:00:02,759 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:00:02,762 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:00:02.762814 主控机启动
+2020-06-08 10:00:02,764 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:00:02,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:00:02,766 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:00:02,767 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:00:02,768 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:00:02,768 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间311c用户hhh入住
+2020-06-08 10:00:02,771 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间310c用户f3入住
+2020-06-08 10:00:02,772 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间312c用户nn入住
+2020-06-08 10:00:02,778 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:00:02,784 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:00:02,784 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:00:02,787 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:00:02,793 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间311c开机
+2020-06-08 10:00:02,799 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:00:02,800 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:00:02,800 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:00:02,808 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间310c开机
+2020-06-08 10:00:02,816 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:00:02,816 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 10:00:02,818 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:00:02,823 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间312c开机
+2020-06-08 10:00:02,835 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:00:02,836 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:00:07,840 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 10:00:07,842 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 10:00:07,844 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 10:00:07,846 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 10:00:13,766 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 309c移出队列并加入队列尾
+2020-06-08 10:00:13,766 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:00:02.784756 finish_time=2020-06-08 10:00:13.784756user_id=shit
+2020-06-08 10:00:13,775 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:00:13,776 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：311c310c312c
+2020-06-08 10:00:14,777 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 10:00:24,780 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 311c移出队列并加入队列尾
+2020-06-08 10:00:24,780 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=311c start_time=2020-06-08 10:00:02.800712 finish_time=2020-06-08 10:00:24.800712user_id=hhh
+2020-06-08 10:00:24,783 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间311c停止服务
+2020-06-08 10:00:24,783 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：310c312c309c
+2020-06-08 10:00:25,784 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:00:27,846 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:00:25.784246 finish_time=2020-06-08 10:00:27.784246user_id=shit
+2020-06-08 10:00:27,851 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:00:27,851 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:00:27,853 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 10:00:32,855 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:00:32,856 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:280] - 房间309c关机
+2020-06-08 10:00:32,857 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:290] - 房间309c退房
+2020-06-08 10:00:32,858 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 10:00:32,858 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 10:00:32,861 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:00:32,861 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:00:32,865 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:00:32,865 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:00:32,867 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:468] - 保存详单文件309c-20200608100002-detail.txt
+2020-06-08 10:00:32,868 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:539] - 初始化InvoiceService
+2020-06-08 10:00:32,871 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:00:32,872 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:00:32,872 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:505] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:00:02.768797 check_out_time=2020-06-08 10:00:32.857328
+2020-06-08 10:00:32,889 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:00:32,889 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:00:32,892 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:505] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:00:02.768797 check_out_time=2020-06-08 10:00:32.857328
+2020-06-08 10:00:32,897 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:541] - 保存账单文件309c-20200608100002-invoice.txt
+2020-06-08 10:00:32,899 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:567] - 初始化ReportService
+2020-06-08 10:00:32,923 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:591] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:00:32,936 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:591] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:03:01,639 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 10:03:01,640 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:03:01,640 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:03:01,640 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:03:01,640 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:03:01,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:03:01,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:03:01,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 10:03:01,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 10:03:01,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 10:03:01,642 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:03:01,642 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:03:01.642097 主控机启动
+2020-06-08 10:03:01,643 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:03:01,643 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:03:01,643 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:03:01,644 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:03:01,646 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:03:01,648 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间311c用户hhh入住
+2020-06-08 10:03:01,657 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间310c用户f3入住
+2020-06-08 10:03:01,657 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间312c用户nn入住
+2020-06-08 10:03:01,659 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:03:01,664 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:03:01,668 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:03:01,670 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:03:01,671 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间311c开机
+2020-06-08 10:03:01,673 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:03:01,674 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:03:01,674 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:03:01,675 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间310c开机
+2020-06-08 10:03:01,685 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:03:01,686 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 10:03:01,686 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:03:01,687 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间312c开机
+2020-06-08 10:03:01,690 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:03:01,690 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:03:06,700 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 10:03:06,713 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 10:03:06,715 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 10:03:06,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 10:03:12,645 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 309c移出队列并加入队列尾
+2020-06-08 10:03:12,645 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:03:01.668031 finish_time=2020-06-08 10:03:12.668031user_id=shit
+2020-06-08 10:03:12,649 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:03:12,649 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：311c310c312c
+2020-06-08 10:03:13,650 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 10:03:23,656 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 311c移出队列并加入队列尾
+2020-06-08 10:03:23,656 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=311c start_time=2020-06-08 10:03:01.674013 finish_time=2020-06-08 10:03:23.674013user_id=hhh
+2020-06-08 10:03:23,658 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间311c停止服务
+2020-06-08 10:03:23,659 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：310c312c309c
+2020-06-08 10:03:24,659 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:03:26,719 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:03:24.659539 finish_time=2020-06-08 10:03:26.659539user_id=shit
+2020-06-08 10:03:26,721 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:03:26,721 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:03:26,725 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 10:03:31,725 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:03:31,726 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:280] - 房间309c关机
+2020-06-08 10:03:31,727 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:290] - 房间309c退房
+2020-06-08 10:03:31,728 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 10:03:31,728 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 10:03:31,731 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:03:31,731 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:03:31,734 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:03:31,734 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:03:31,736 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:467] - 保存详单文件309c-20200608100301-detail.txt
+2020-06-08 10:03:31,737 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:539] - 初始化InvoiceService
+2020-06-08 10:03:31,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:03:31,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:03:31,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:03:01.645089 check_out_time=2020-06-08 10:03:31.727637
+2020-06-08 10:03:31,746 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:03:31,749 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:03:31,754 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:03:01.645089 check_out_time=2020-06-08 10:03:31.727637
+2020-06-08 10:03:31,757 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:540] - 保存账单文件309c-20200608100301-invoice.txt
+2020-06-08 10:03:31,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:567] - 初始化ReportService
+2020-06-08 10:03:31,780 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:03:31,794 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:03:31,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:650] - 保存报表文件309c-20200608000000-report.txt
+2020-06-08 10:03:31,804 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:122] - 2020-06-08 10:03:31.803440主控机关机
+2020-06-08 10:03:31,805 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=310c start_time=2020-06-08 10:03:01.686977 finish_time=2020-06-08 10:03:31.686977user_id=f3
+2020-06-08 10:03:31,814 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间310c停止服务
+2020-06-08 10:03:31,815 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=311c start_time=2020-06-08 10:03:26.721028 finish_time=2020-06-08 10:03:31.721028user_id=hhh
+2020-06-08 10:03:31,819 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间311c停止服务
+2020-06-08 10:03:31,826 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=312c start_time=2020-06-08 10:03:13.650982 finish_time=2020-06-08 10:03:31.650982user_id=nn
+2020-06-08 10:03:31,830 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间312c停止服务
+2020-06-08 10:08:52,599 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 10:08:52,602 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:08:52,603 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:08:52,603 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:08:52,603 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:08:52,603 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:08:52,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:08:52,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 10:08:52,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 10:08:52,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 10:08:52,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:08:52,605 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:08:52.605760 主控机启动
+2020-06-08 10:08:52,606 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:08:52,607 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:08:52,618 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:08:52,620 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:08:52,620 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:08:52,621 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间311c用户hhh入住
+2020-06-08 10:08:52,622 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间310c用户f3入住
+2020-06-08 10:08:52,623 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间312c用户nn入住
+2020-06-08 10:08:52,623 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:08:52,635 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:08:52,638 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:08:52,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:08:52,641 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间311c开机
+2020-06-08 10:08:52,649 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:08:52,654 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:08:52,659 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:08:52,659 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间310c开机
+2020-06-08 10:08:52,669 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:08:52,675 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间310c开始服务
+2020-06-08 10:08:52,676 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:08:52,677 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间312c开机
+2020-06-08 10:08:52,686 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:08:52,687 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:08:57,698 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 10:08:57,711 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间310c改变目标温度为21
+2020-06-08 10:08:57,716 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间311c改变目标温度为21
+2020-06-08 10:08:57,722 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间312c改变目标温度为21
+2020-06-08 10:09:03,609 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 309c移出队列并加入队列尾
+2020-06-08 10:09:03,609 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:08:52.638688 finish_time=2020-06-08 10:09:03.638688user_id=shit
+2020-06-08 10:09:03,612 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:09:03,612 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：311c310c312c
+2020-06-08 10:09:04,614 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间312c开始服务
+2020-06-08 10:09:14,617 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:221] - 311c移出队列并加入队列尾
+2020-06-08 10:09:14,617 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=311c start_time=2020-06-08 10:08:52.654630 finish_time=2020-06-08 10:09:14.654630user_id=hhh
+2020-06-08 10:09:14,619 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间311c停止服务
+2020-06-08 10:09:14,620 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:226] - 服务队列：310c312c309c
+2020-06-08 10:09:15,620 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:09:17,724 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:09:15.620746 finish_time=2020-06-08 10:09:17.620746user_id=shit
+2020-06-08 10:09:17,727 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:09:17,728 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间311c开始服务
+2020-06-08 10:09:17,729 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 10:09:22,730 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:09:22,731 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:280] - 房间309c关机
+2020-06-08 10:09:22,733 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:290] - 房间309c退房
+2020-06-08 10:09:22,733 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 10:09:22,734 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 10:09:22,736 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:09:22,737 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:09:22,740 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:09:22,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:09:22,744 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:467] - 保存详单文件309c-20200608100852-detail.txt
+2020-06-08 10:09:22,744 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:539] - 初始化InvoiceService
+2020-06-08 10:09:22,746 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:09:22,747 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:09:22,747 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:08:52.620721 check_out_time=2020-06-08 10:09:22.733736
+2020-06-08 10:09:22,751 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:09:22,755 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单3
+2020-06-08 10:09:22,760 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:08:52.620721 check_out_time=2020-06-08 10:09:22.733736
+2020-06-08 10:09:22,859 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:540] - 保存账单文件309c-20200608100852-invoice.txt
+2020-06-08 10:09:22,862 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:567] - 初始化ReportService
+2020-06-08 10:09:22,876 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:09:22,895 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:09:22,909 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:651] - 保存报表文件309c-20200608000000-report.txt
+2020-06-08 10:09:22,914 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:122] - 2020-06-08 10:09:22.913254主控机关机
+2020-06-08 10:09:22,918 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=310c start_time=2020-06-08 10:08:52.675591 finish_time=2020-06-08 10:09:22.675591user_id=f3
+2020-06-08 10:09:22,930 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间310c停止服务
+2020-06-08 10:09:22,931 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=311c start_time=2020-06-08 10:09:17.728111 finish_time=2020-06-08 10:09:22.728111user_id=hhh
+2020-06-08 10:09:22,936 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间311c停止服务
+2020-06-08 10:09:22,939 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=312c start_time=2020-06-08 10:09:04.614182 finish_time=2020-06-08 10:09:22.614182user_id=nn
+2020-06-08 10:09:22,944 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间312c停止服务
+2020-06-08 10:14:39,042 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:420] - 初始化AdministratorService
+2020-06-08 10:14:39,042 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:14:39,043 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:14:39,043 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:14:39,043 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:14:39,043 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:14:39,044 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:14:39,045 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:149] - 初始化SlaverQueue
+2020-06-08 10:14:39,046 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:242] - 初始化Dispatcher
+2020-06-08 10:14:39,046 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:281] - 初始化PowerService
+2020-06-08 10:14:39,047 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:14:39,049 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:14:39.049479 主控机启动
+2020-06-08 10:14:39,050 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:14:39,060 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:14:39,061 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:14:39,062 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:14:39,063 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:14:39,072 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:14:39,079 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:14:39,080 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:14:39,080 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:360] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:14:44,091 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:378] - 房间309c改变目标温度为21
+2020-06-08 10:15:04,092 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:14:39.080398 finish_time=2020-06-08 10:15:04.080398user_id=shit
+2020-06-08 10:15:04,094 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:15:04,094 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:15:04,096 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:405] - 房间309c改变目标风速为2
+2020-06-08 10:15:09,097 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:15:04.094562 finish_time=2020-06-08 10:15:09.094562user_id=shit
+2020-06-08 10:15:09,102 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:15:09,102 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:280] - 房间309c关机
+2020-06-08 10:15:09,105 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:290] - 房间309c退房
+2020-06-08 10:15:09,105 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 10:15:09,106 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:511] - 初始化DetailService
+2020-06-08 10:15:09,116 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:15:09,117 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单2
+2020-06-08 10:15:09,125 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:15:09,126 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单2
+2020-06-08 10:15:09,132 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:467] - 保存详单文件309c-20200608101439-detail.txt
+2020-06-08 10:15:09,141 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:539] - 初始化InvoiceService
+2020-06-08 10:15:09,145 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:15:09,146 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单2
+2020-06-08 10:15:09,147 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:14:39.063442 check_out_time=2020-06-08 10:15:09.105163
+2020-06-08 10:15:09,160 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单1
+2020-06-08 10:15:09,160 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:394] - 读取详单2
+2020-06-08 10:15:09,161 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:504] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 10:14:39.063442 check_out_time=2020-06-08 10:15:09.105163
+2020-06-08 10:15:09,163 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:540] - 保存账单文件309c-20200608101439-invoice.txt
+2020-06-08 10:15:09,166 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:567] - 初始化ReportService
+2020-06-08 10:15:09,181 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:15:09,197 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:590] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 10:15:09,203 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:651] - 保存报表文件309c-20200608000000-report.txt
+2020-06-08 10:15:09,204 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:122] - 2020-06-08 10:15:09.204896主控机关机
+2020-06-08 10:23:57,581 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:422] - 初始化AdministratorService
+2020-06-08 10:23:57,581 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:23:57,581 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:23:57,582 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:23:57,583 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:23:57,583 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:23:57,583 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:23:57,584 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:150] - 初始化SlaverQueue
+2020-06-08 10:23:57,584 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:244] - 初始化Dispatcher
+2020-06-08 10:23:57,584 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:283] - 初始化PowerService
+2020-06-08 10:23:57,585 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:23:57,586 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:23:57.585794 主控机启动
+2020-06-08 10:23:57,586 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:23:57,586 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:23:57,587 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:23:57,587 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:23:57,588 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:23:57,588 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:23:57,604 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:23:57,607 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:23:57,607 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:362] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:24:41,152 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:422] - 初始化AdministratorService
+2020-06-08 10:24:41,152 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:24:41,152 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:24:41,153 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:24:41,153 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:24:41,153 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:24:41,153 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:24:41,154 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:150] - 初始化SlaverQueue
+2020-06-08 10:24:41,154 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:244] - 初始化Dispatcher
+2020-06-08 10:24:41,154 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:283] - 初始化PowerService
+2020-06-08 10:24:41,154 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:24:41,155 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:24:41.155873 主控机启动
+2020-06-08 10:24:41,155 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:24:41,156 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:24:41,156 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:24:41,156 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:24:41,157 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:24:41,158 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:24:41,168 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:24:41,172 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:100] - 房间309c开始服务
+2020-06-08 10:24:41,173 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:362] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:28:42,139 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:24:41.172857 finish_time=2020-06-08 10:28:41.172857user_id=shit
+2020-06-08 10:28:42,141 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:116] - 房间309c停止服务
+2020-06-08 10:28:42,142 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:260] - 房间309c到达设定温度
+2020-06-08 10:32:57,591 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:423] - 初始化AdministratorService
+2020-06-08 10:32:57,592 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 10:32:57,592 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 10:32:57,592 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 10:32:57,593 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 10:32:57,593 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 10:32:57,593 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 10:32:57,593 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:151] - 初始化SlaverQueue
+2020-06-08 10:32:57,594 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:245] - 初始化Dispatcher
+2020-06-08 10:32:57,594 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:284] - 初始化PowerService
+2020-06-08 10:32:57,594 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 10:32:57,595 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 10:32:57.595582 主控机启动
+2020-06-08 10:32:57,595 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 10:32:57,595 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 10:32:57,596 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 10:32:57,597 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 10:32:57,598 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 10:32:57,599 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 10:32:57,610 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:47] - 初始化RunningSlaver
+2020-06-08 10:32:57,611 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:101] - 房间309c开始服务
+2020-06-08 10:32:57,612 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:363] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 10:34:58,042 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:397] - 新建详单(room_id=309c start_time=2020-06-08 10:32:57.611540 finish_time=2020-06-08 10:34:57.611540user_id=shit
+2020-06-08 10:34:58,044 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:117] - 房间309c停止服务
+2020-06-08 10:34:58,045 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:261] - 房间309c到达设定温度
+2020-06-08 10:36:58,110 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:101] - 房间309c开始服务
+2020-06-08 10:36:59,111 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:101] - 房间309c开始服务
+2020-06-08 11:59:52,717 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:429] - 初始化AdministratorService
+2020-06-08 11:59:52,717 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间309c
+2020-06-08 11:59:52,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间310c
+2020-06-08 11:59:52,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间311c
+2020-06-08 11:59:52,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间312c
+2020-06-08 11:59:52,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:241] - 初始化房间f3
+2020-06-08 11:59:52,718 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:45] - 初始化主控机
+2020-06-08 11:59:52,719 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:154] - 初始化SlaverQueue
+2020-06-08 11:59:52,719 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:249] - 初始化Dispatcher
+2020-06-08 11:59:52,719 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:288] - 初始化PowerService
+2020-06-08 11:59:52,719 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:24] - 初始化MasterController
+2020-06-08 11:59:52,720 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:114] - 2020-06-08 11:59:52.720688 主控机启动
+2020-06-08 11:59:52,721 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:mode=制冷
+2020-06-08 11:59:52,721 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:66] - 修改主控机参数为:temp=25
+2020-06-08 11:59:52,721 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:201] - 获取所有从机状态
+2020-06-08 11:59:52,722 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:81] - 初始化SlaveController
+2020-06-08 11:59:52,723 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间309c用户shit入住
+2020-06-08 11:59:52,724 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间311c用户hhh入住
+2020-06-08 11:59:52,724 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间310c用户f3入住
+2020-06-08 11:59:52,725 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:270] - 房间312c用户nn入住
+2020-06-08 11:59:52,736 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间309c开机
+2020-06-08 11:59:52,741 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:48] - 初始化RunningSlaver
+2020-06-08 11:59:52,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间309c开始服务
+2020-06-08 11:59:52,742 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:369] - 房间309c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 11:59:52,744 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间311c开机
+2020-06-08 11:59:52,752 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:48] - 初始化RunningSlaver
+2020-06-08 11:59:52,753 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间311c开始服务
+2020-06-08 11:59:52,754 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:369] - 房间311c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 11:59:52,755 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间310c开机
+2020-06-08 11:59:52,757 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:48] - 初始化RunningSlaver
+2020-06-08 11:59:52,765 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间310c开始服务
+2020-06-08 11:59:52,766 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:369] - 房间310c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 11:59:52,767 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:275] - 房间312c开机
+2020-06-08 11:59:52,773 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:48] - 初始化RunningSlaver
+2020-06-08 11:59:52,774 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:369] - 房间312c初始化服务, 目标温度: 25, 风速: 1
+2020-06-08 12:00:02,780 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:387] - 房间309c改变目标温度为21
+2020-06-08 12:00:02,782 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:387] - 房间310c改变目标温度为21
+2020-06-08 12:00:02,784 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:387] - 房间311c改变目标温度为21
+2020-06-08 12:00:02,785 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:387] - 房间312c改变目标温度为21
+2020-06-08 12:00:03,724 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:228] - 309c移出队列并加入队列尾
+2020-06-08 12:00:03,725 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=309c start_time=2020-06-08 11:59:52.742630 finish_time=2020-06-08 12:00:03.742630user_id=shit
+2020-06-08 12:00:03,727 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间309c停止服务
+2020-06-08 12:00:03,727 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:233] - 服务队列：311c310c312c
+2020-06-08 12:00:04,727 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间312c开始服务
+2020-06-08 12:00:14,730 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:228] - 311c移出队列并加入队列尾
+2020-06-08 12:00:14,730 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=311c start_time=2020-06-08 11:59:52.753602 finish_time=2020-06-08 12:00:14.753602user_id=hhh
+2020-06-08 12:00:14,732 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间311c停止服务
+2020-06-08 12:00:14,732 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:233] - 服务队列：310c312c309c
+2020-06-08 12:00:15,734 [INFO] [Timer] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间309c开始服务
+2020-06-08 12:00:22,787 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=309c start_time=2020-06-08 12:00:15.734154 finish_time=2020-06-08 12:00:22.734154user_id=shit
+2020-06-08 12:00:22,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间309c停止服务
+2020-06-08 12:00:22,790 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:105] - 房间311c开始服务
+2020-06-08 12:00:22,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:414] - 房间309c改变目标风速为2
+2020-06-08 12:00:27,792 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间309c停止服务
+2020-06-08 12:00:27,793 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:280] - 房间309c关机
+2020-06-08 12:00:27,794 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:290] - 房间309c退房
+2020-06-08 12:00:27,795 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\controller.py:127] - 初始化InfoController
+2020-06-08 12:00:27,795 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:520] - 初始化DetailService
+2020-06-08 12:00:27,797 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单1
+2020-06-08 12:00:27,798 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单3
+2020-06-08 12:00:27,808 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单1
+2020-06-08 12:00:27,809 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单3
+2020-06-08 12:00:27,812 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:471] - 保存详单文件309c-20200608115952-detail.txt
+2020-06-08 12:00:27,814 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:548] - 初始化InvoiceService
+2020-06-08 12:00:27,824 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单1
+2020-06-08 12:00:27,825 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单3
+2020-06-08 12:00:27,826 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:509] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 11:59:52.723682 check_out_time=2020-06-08 12:00:27.794914
+2020-06-08 12:00:27,831 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单1
+2020-06-08 12:00:27,840 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:395] - 读取详单3
+2020-06-08 12:00:27,842 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:509] - 新建账单(room_id=309cuser_id=shit check_in_time=2020-06-08 11:59:52.723682 check_out_time=2020-06-08 12:00:27.794914
+2020-06-08 12:00:27,937 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:546] - 保存账单文件309c-20200608115952-invoice.txt
+2020-06-08 12:00:27,940 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:576] - 初始化ReportService
+2020-06-08 12:00:27,956 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:597] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 12:00:27,966 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:597] - 新建报表(room_id=309c start_time=2020-06-08 00:00:00 finish_time=2020-06-08 23:59:59
+2020-06-08 12:00:27,983 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:660] - 保存报表文件309c-20200608000000-report.txt
+2020-06-08 12:00:27,985 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:122] - 2020-06-08 12:00:27.984407主控机关机
+2020-06-08 12:00:27,987 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=310c start_time=2020-06-08 11:59:52.764583 finish_time=2020-06-08 12:00:27.764583user_id=f3
+2020-06-08 12:00:27,997 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间310c停止服务
+2020-06-08 12:00:27,998 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=311c start_time=2020-06-08 12:00:22.790326 finish_time=2020-06-08 12:00:27.790326user_id=hhh
+2020-06-08 12:00:28,009 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间311c停止服务
+2020-06-08 12:00:28,009 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\entity.py:398] - 新建详单(room_id=312c start_time=2020-06-08 12:00:04.727577 finish_time=2020-06-08 12:00:27.727577user_id=nn
+2020-06-08 12:00:28,013 [INFO] [MainThread] [E:\课件\大三下\软件工程\dis_air_system\TemperatureController\service.py:121] - 房间312c停止服务

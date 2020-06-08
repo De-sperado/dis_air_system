@@ -8,16 +8,24 @@ from .models import ParaForm
 # Create your views here.
 def func(request):
     return render(request,'administrator/admin_func.html')
-
+#TODO:
 def power_on(request):
     try:
         controller = MasterController.instance()
-        controller.control(operation='power on')
+        controller.control(operation='turn on')
         para_form = ParaForm()
         return render(request,'administrator/init.html',locals())
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 
+#TODO:这个函数修改参数 传入参数key 和value   key可以为 mode temp frequent   value为目标值
+def set_param(request):
+    if request.method == "POST":
+        key=request.POST.get('key')
+        value=request.POST.get('value')
+        controller = MasterController.instance()
+        controller.control(operation='set param',key=key,value=value)
+#TODO：这个函数就没用了
 def init_param(request):
     if request.method == "POST":
         para_form = ParaForm(request.POST)
@@ -59,16 +67,7 @@ def init_param(request):
         else:
             return render(request,'users/administrator/func/',{'message':'请检查输入内容！'})
 
-'''def start_up(request):
-    try:
-        controller = MasterController.instance()
-        controller.control( operation='turn on')
-        content = {'message': 'OK', 'result': None}
-        return JsonResponse(content, safe=False)
-    except RuntimeError as error:
-        logger.error(error)
-        return JsonResponse({'message': str(error)})
-'''
+
 
 def check_room_state(request):
     try:
@@ -78,6 +77,21 @@ def check_room_state(request):
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 
+#TODO:从这里获得主控的信息
+'''
+result为 {
+            'status': self.status,
+            'mode': self.mode,
+            'frequent': self.__frequent
+        }
+'''
+def get_main_status(request):
+    try:
+        controller = MasterController.instance()
+        content = {'message': 'OK', 'result': controller.control(operation='get main status')}
+        return JsonResponse(content)
+    except RuntimeError as error:
+        return JsonResponse({'message': str(error)})
 
 def close(request):
     try:

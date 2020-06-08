@@ -30,8 +30,8 @@ class MasterMachine:
     def __init__(self):
         """初始化主控机"""
         self.__mode = COOL
-        self.__status = STANDBY
-        self.__start_time = datetime.datetime.now()
+        self.__status = CLOSED
+        self.__start_time = None
         self.__finish_time = None
         self.__temp_low_limit = TEMP_LIMT[COOL][0]
         self.__temp_high_limit = TEMP_LIMT[COOL][1]
@@ -43,7 +43,6 @@ class MasterMachine:
         for _ in room_ids:
             self.__rooms.append(Room(_, self.default_target_temp, self.default_speed))
         logger.info('初始化主控机')
-        logger.info(str(self.__start_time) + ' 主控机启动')
 
     @classmethod
     def instance(cls):
@@ -82,6 +81,10 @@ class MasterMachine:
     def temp_low_limit(self):
         return self.__temp_low_limit
 
+    @status.setter
+    def status(self, status):
+        self.__status = status
+
     @property
     def temp_high_limit(self):
         return self.__temp_high_limit
@@ -104,11 +107,11 @@ class MasterMachine:
             raise RuntimeError('房间号不存在')
         return self.__rooms[room_ids.index(room_id)]
 
-    # def turn_on(self) -> dict:
-    #     """启动主控机"""
-    #     self.__status = RUNNING
-    #     self.__start_time = datetime.datetime.now()
-    #     logger.info(str(self.__start_time) + ' 主控机启动')
+    def turn_on(self) -> dict:
+        """启动主控机"""
+        self.__status = STANDBY
+        self.__start_time = datetime.datetime.now()
+        logger.info(str(self.__start_time) + ' 主控机启动')
 
     def turn_off(self) -> None:
         """关闭主控机"""
@@ -149,12 +152,12 @@ class MasterMachine:
         logs = DBFacade.exec(Log.objects.filter, room_id=room_id, op_time__gte=start_time, op_time__lte=finish_time)
         duration = 0
         fee = 0.0
-        #温控请求起止时间（列出所有记录）、温控请求的起止温度及风量消耗大小（列出所有记录）、每次温控请求所需费用、当日所需总费用
-        dd=[]
+        # 温控请求起止时间（列出所有记录）、温控请求的起止温度及风量消耗大小（列出所有记录）、每次温控请求所需费用、当日所需总费用
+        dd = []
         for d in details:
             duration += (d.finish_time - d.start_time).seconds
             fee += d.fee
-            dd.append([d.start_time,d.finish_time,d.start_temp,d.finish_temp,d.fee])
+            dd.append([d.start_time, d.finish_time, d.start_temp, d.finish_temp, d.fee])
         on_off_times = 0
         temp_times = 0
         speed_times = 0
@@ -163,7 +166,7 @@ class MasterMachine:
             temp_times += 1 if l.operation == CHANGE_TEMP else 0
             speed_times += 1 if l.operation == CHANGE_SPEED else 0
         return Report(room_id, start_time, finish_time, duration, on_off_times,
-                      temp_times, speed_times, len(details), round(fee, 2),dd)
+                      temp_times, speed_times, len(details), round(fee, 2), dd)
 
     def get_main_status(self):
         return {
@@ -186,7 +189,8 @@ class MasterMachine:
             'target_temper': room.target_temp,
             'user_id': room.user_id,
             'fee': round(room.fee, 2),
-            'fee_rate': self.__fee_rate[room.current_speed]
+            'fee_rate': self.__fee_rate[room.current_speed],
+            'energy': room.energy
         }
 
     def get_all_status(self) -> List[dict]:
@@ -225,10 +229,11 @@ class Room:
         """
         self.__room_id = room_id
         self.__status = AVAILABLE
-        self.__current_temp = current_temp
+        self.__current_temp = CURRENT_TEMP
         self.__current_speed = target_speed
         self.__target_temp = target_temp
         self.__fee = 0
+        self.__energy = 0
         self.__user_id = ""
         self.__service_time = 0
         self.__check_in_time = ...  # type: datetime.datetime
@@ -258,6 +263,7 @@ class Room:
             raise RuntimeError('该房间已经有客人入住')
         self.__status = CLOSED
         self.__fee = 0
+        self.__energy = 0
         self.__service_time = 0
         self.__user_id = user_id
         self.__check_in_time = datetime.datetime.now()
@@ -316,6 +322,14 @@ class Room:
         self.__fee = fee
 
     @property
+    def energy(self):
+        return self.__energy
+
+    @energy.setter
+    def energy(self, energy):
+        self.__energy = energy
+
+    @property
     def service_time(self):
         return self.__service_time
 
@@ -372,10 +386,11 @@ class Detail:
         self.__finish_time = finish_time
         self.__target_speed = target_speed
         self.__fee_rate = fee_rate
-        self.__start_temp = start_temp
-        self.__finish_temp = finish_temp
-        self.__fee = fee
+        self.__start_temp = round(start_temp,2)
+        self.__finish_temp = round(finish_temp,2)
+        self.__fee = round(fee,2)
         self.__user_id = user_id
+        self.__energy = round(fee/5, 2)
         if detail_id is not None:
             logger.info('读取详单' + str(self.__detail_id))
         else:
@@ -421,7 +436,9 @@ class Detail:
     @property
     def fee(self):
         return self.__fee
-
+    @property
+    def energy(self):
+        return self.__energy
     @staticmethod
     def get_detail_file(room_id, check_in_time, detail_list):
 
@@ -438,19 +455,19 @@ class Detail:
                     '风速': str(detail.target_speed),
                     '费率': str(detail.fee_rate),
                     '工作时长': str((detail.finish_time - detail.start_time).seconds),
-                    '费用': str(round(detail.fee, 2))
+                    '费用': str(round(detail.fee, 2)),
+                    '风量消耗':str(round(detail.energy,2))
                 }
             )
         filename = room_id + '-' + check_in_time.strftime('%Y%m%d%H%M%S') + '-detail.txt'
 
         with open(filename, 'w') as f:
-            f.write('房间号:'+file_dict['房间号： '])
+            f.write('房间号:' + file_dict['房间号： ']+'\n')
             for i in range(len(file_dict['detail'])):
-                f.write('  ')
-                f.write('part'+i)
-                for k,v in file_dict['detail'][i]:
-                    f.write(k+':'+v)
-            # json.dump(file_dict, f, ensure_ascii=False)
+                f.write('\n')
+                f.write('part' + str(i)+'\n')
+                for k, v in file_dict['detail'][i].items():
+                    f.write(k + ':' + str(v)+'\n')
         logger.info('保存详单文件' + filename)
 
         return filename
@@ -486,6 +503,7 @@ class Invoice:
         self.__check_out_time = check_out_time
         self.__total_fee = total_fee
         self.__user_id = user_id
+        self.__total_energy = total_fee/5
         logger.info('新建账单(room_id=' + str(self.__room_id) + 'user_id=' + self.__user_id + ' check_in_time=' + str(
             self.__check_in_time) +
                     ' check_out_time=' + str(self.__check_out_time))
@@ -509,7 +527,9 @@ class Invoice:
     @property
     def total_fee(self):
         return self.__total_fee
-
+    @property
+    def total_energy(self):
+        return self.__total_energy
     def get_invoice_file(self):
         file_dict = {
             '房间号：': str(self.__room_id),
@@ -517,12 +537,14 @@ class Invoice:
             '入住时间：': self.__check_in_time.strftime('%Y-%m-%d %H:%M:%S'),
             '退房时间：': self.__check_out_time.strftime('%Y-%m-%d %H:%M:%S'),
             '费用：': str(round(self.__total_fee, 2)),
+            '能量消耗':str(round(self.__total_energy, 2))
         }
-        filename = self.__room_id + '-' + self.__check_in_time.strftime('%Y%m%d%H%M%S') + '-invoice.json'
+        filename = self.__room_id + '-' + self.__check_in_time.strftime('%Y%m%d%H%M%S') + '-invoice.txt'
         """生成账单文件"""
 
         with open(filename, 'w') as f:
-            json.dump(file_dict, f, ensure_ascii=False)
+            for k, v in file_dict.items():
+                f.write(k + str(v)+'\n')
         logger.info('保存账单文件' + filename)
 
         return filename
@@ -547,7 +569,7 @@ class Report:
     """
 
     def __init__(self, room_id, start_time, finish_time, duration, on_off_times,
-                 temp_times, speed_times, n_details, fee,details):
+                 temp_times, speed_times, n_details, fee, details):
         """
         初始化报表
 
@@ -570,8 +592,9 @@ class Report:
         self.__times_of_change_temp = temp_times
         self.__times_of_change_speed = speed_times
         self.__number_of_detail = n_details
-        self.__details=details
+        self.__details = details
         self.__fee = fee
+        self.__energy=fee/5
         logger.info('新建报表(room_id=' + str(self.__room_id) + ' start_time=' + str(self.__start_time) +
                     ' finish_time=' + str(self.__finish_time))
 
@@ -621,17 +644,20 @@ class Report:
             '风速更改次数：': str(self.__times_of_change_speed),
             '包含详单个数：': str(self.__number_of_detail),
             '服务时间： ': str(self.__duration),
-            '总费用：': str(round(self.__fee, 2))
+            '总费用：': str(round(self.__fee, 2)),
+            '总能量：':str(round(self.__energy, 2))
         }
         filename = self.__room_id + '-' + self.__start_time.strftime('%Y%m%d%H%M%S') + '-report.txt'
         with open(filename, 'w') as f:
-            for k,v in report_dict:
-                f.write(k+v)
+            for k, v in report_dict.items():
+                f.write(k + str(v)+'\n')
             for _ in self.__details:
-                f.write('开始时间：'+_[0])
-                f.write('结束时间：' + _[1])
-                f.write('开始温度：' + _[2])
-                f.write('结束温度：' + _[3])
-                f.write('此次服务费用：' + _[4])
+                print(' \n')
+                f.write('开始时间：' + str(_[0])+'\n')
+                f.write('结束时间：' + str(_[1])+'\n')
+                f.write('开始温度：' + str(round(_[2],2))+'\n')
+                f.write('结束温度：' + str(round(_[3],2))+'\n')
+                f.write('此次能量消耗：' + str(round(_[4]/5, 2)) + '\n')
+                f.write('此次服务费用：' + str(_[4])+'\n')
         logger.info('保存报表文件' + filename)
         return filename

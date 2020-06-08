@@ -5,6 +5,7 @@ from django.http import JsonResponse, StreamingHttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+#TODO:新加了一个total_energy
 def query_invoice(request):
     if request.method == 'GET':
         return render(request, 'query_invoice.html')
@@ -22,7 +23,8 @@ def query_invoice(request):
                            'check_in_time': content.check_in_time.strftime('%Y-%m-%d %H:%M:%S'),
                            'check_out_time': content.check_out_time.strftime('%Y-%m-%d %H:%M:%S'),
                            'fee': content.total_fee,
-                           'user_id':content.user_id
+                           'user_id':content.user_id,
+                           'energy':content.total_energy
                        }
                        }
             return JsonResponse(content)
@@ -44,7 +46,7 @@ def print_invoice(request):
         return response
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
-
+#TODO：新加了一个energy
 def query_detail(request):
     if request.method == 'GET':
         return render(request,'query_detail.html')
@@ -67,7 +69,8 @@ def query_detail(request):
                                'fee_rate': c.fee_rate,
                                'fee': round(c.fee, 2),
                                'start_temp':c.start_temp,
-                               'finish_temp':c.finish_temp
+                               'finish_temp':c.finish_temp,
+                               'energy':c.energy
                            }
                            for c in content
                        ]

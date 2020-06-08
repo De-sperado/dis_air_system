@@ -4,13 +4,12 @@
 除AirConditionerService外，均采用单例模式
 """
 import datetime
+import math
 import threading
 from typing import List, Tuple, Optional, Dict
 
 from TemperatureController.models import DetailModel, Log
-from .tools import logger, UPDATE_FREQUENCY, TEMPERATURE_CHANGE_RATE_PER_SEC, RepeatTimer, \
-    DBFacade, room_ids, MAX_QUEUE, MAX_WAITING_TIME, No, COOL, HOT, POWER_ON, POWER_OFF, CHANGE_TEMP, \
-    CHANGE_SPEED, STANDBY, RUNNING, STOPPED, AVAILABLE, CLOSED, SERVING, WAITING, LOW, NORMAL, HIGH
+from .tools import *
 from TemperatureController.entity import MasterMachine, Detail, Invoice, Report, Room
 
 
@@ -43,7 +42,9 @@ class RunningSlaver:
         self.__target_speed = target_speed
         self.__fee_rate = fee_rate
         self.__fee_rate_per_sec = fee_rate / 60
+        self.__energy_rate_per_sec = self.__fee_rate_per_sec / 5
         self.__fee_since_start = 0.0
+        self.__energy_since_start = 0.0
         logger.info('初始化RunningSlaver')
 
     @property
@@ -86,7 +87,9 @@ class RunningSlaver:
     @property
     def fee_since_start(self):
         return self.__fee_since_start
-
+    @property
+    def energy_since_start(self):
+        return self.__energy_since_start
     @property
     def start_temp(self):
         return self.__start_temp
@@ -95,8 +98,10 @@ class RunningSlaver:
         """服务开始"""
         self.__duration = 0
         self.__fee_since_start = 0.0
+        self.__energy_since_start=0.0
         self.__start_time = datetime.datetime.now()
         self.__start_temp = self.__room.current_temp
+        self.__room.status = SERVING
         logger.info('房间' + self.room.room_id + '开始服务')
 
     def finish(self):
@@ -122,6 +127,7 @@ class RunningSlaver:
             self.__room.service_time += UPDATE_FREQUENCY
             self.__fee_since_start += self.__fee_rate_per_sec * UPDATE_FREQUENCY
             self.__room.fee += self.__fee_rate_per_sec * UPDATE_FREQUENCY
+            self.__room.energy += self.__energy_rate_per_sec * UPDATE_FREQUENCY
             if mode == COOL:
                 self.room.current_temp -= TEMPERATURE_CHANGE_RATE_PER_SEC[self.target_speed] * UPDATE_FREQUENCY
             else:
@@ -144,6 +150,7 @@ class SlaverQueue:
     def __init__(self):
         self.__MAX_NUM = MAX_QUEUE
         self.__queue = []
+        self.__standy_queue = []
         logger.info('初始化SlaverQueue')
 
     @classmethod
@@ -158,6 +165,10 @@ class SlaverQueue:
     @property
     def queue(self):
         return self.__queue
+
+    @property
+    def standy_queue(self):
+        return self.__standy_queue
 
     def push(self, service: RunningSlaver):
         """
@@ -183,7 +194,6 @@ class SlaverQueue:
         Returns:
             到达目标温度的对象
         """
-        print('update queue')
         reach_temp_services = []
         if len(self.queue) != 0:
             for service in self.queue:
@@ -194,6 +204,17 @@ class SlaverQueue:
                 else:
                     if service.room.current_temp - service.room.target_temp > 0.001:
                         reach_temp_services.append(service)
+        temp=[]
+        for service in self.standy_queue:
+            if service.room.current_temp < CURRENT_TEMP:
+                service.room.current_temp += TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
+            else:
+                service.room.current_temp -= TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
+            if math.fabs(service.room.current_temp - service.room.target_temp) >= 1:
+                self.push(service)
+                temp.append(service)
+        for _ in temp:
+            self.standy_queue.remove(_)
         return reach_temp_services
 
     def dispatch(self):
@@ -243,6 +264,7 @@ class Dispatcher:
             self.__slaver_queue.remove(service.room.room_id)
             logger.info('房间' + service.room.room_id + '到达设定温度')
             service.room.status = STANDBY
+            self.__slaver_queue.standy_queue.append(service)
         self.__slaver_queue.dispatch()
         if self.__master_machine.status == RUNNING and len(self.__slaver_queue.queue) == 0:
             self.__master_machine.status = STANDBY
@@ -288,7 +310,9 @@ class SlaverService:
             }
         else:
             logger.error('房间号与用户不匹配')
-            raise RuntimeError('房间号与用户不匹配')
+            return {
+                'message': 'ERROR'
+            }
 
     def slave_machine_power_on(self, room_id: str) -> Tuple[float, int]:
         """
@@ -338,7 +362,10 @@ class SlaverService:
         room.target_temp = target_temp
         room.current_speed = target_speed
         service = RunningSlaver(room, target_speed, self.__master_machine.fee_rate[target_speed])
-        self.__slaver_queue.push(service)
+        if math.fabs(room.current_temp - room.target_temp) >= 1:
+            self.__slaver_queue.push(service)
+        else:
+            self.__slaver_queue.standy_queue.push(service)
         logger.info('房间' + room.room_id + '初始化服务, 目标温度: ' + str(target_temp) + ', 风速: ' + str(target_speed))
         return self.__master_machine.get_slave_status(room)
 
@@ -354,9 +381,6 @@ class SlaverService:
             logger.error('目标温度不合法')
             raise RuntimeError('目标温度不合法')
         room = self.__master_machine.get_room(room_id)
-        if room.status == CLOSED or room.status == AVAILABLE:
-            logger.error('未入住或未开机')
-            raise RuntimeError('未入住或未开机')
         room.target_temp = target_temp
         DBFacade.exec(Log.objects.create, room_id=room_id, operation=CHANGE_TEMP,
                       op_time=datetime.datetime.now())

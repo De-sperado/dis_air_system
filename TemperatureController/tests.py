@@ -5,8 +5,7 @@ from threading import Thread
 from django.test import TestCase
 
 from TemperatureController.controller import MasterController,SlaveController,InfoController
-from TemperatureController.tools import logger, room_ids, DBFacade, \
-    current_temp, COOL, NORMAL
+from TemperatureController.tools import *
 
 
 class ControllerTest(TestCase):
@@ -16,14 +15,11 @@ class ControllerTest(TestCase):
         # 取得控制器对象
         masterController = MasterController.instance()
         # 主机开机
-        masterController.control(operation='power on')
+        masterController.control(operation='turn on')
         # 参数初始化
         print(COOL)
-        masterController.control(operation='set param', mode=COOL,
-                           temp_low_limit=16, temp_high_limit=30, default_target_temp=24,
-                           default_speed=NORMAL, fee_rate=(0.5, 0.75, 1.5), targetFeq=60)
-        # 开始执行
-        masterController.control(operation='turn on')
+        masterController.control(operation='set param',key='mode',value='制冷')
+        masterController.control(operation='set param', key='temp', value='25')
         # 监视空调
         tools = masterController.control(operation='get status')
         print(tools)
@@ -37,12 +33,18 @@ class ControllerTest(TestCase):
         masterController.control(operation='check in', room_id='310c', user_id='f3')
         masterController.control(operation='check in', room_id='312c', user_id='nn')
         # 房间开机
-        tools = slaveController.control(operation='power on', room_id='309c', current_temp=25)
-        tools = slaveController.control(operation='power on', room_id='311c', current_temp=25)
-        tools = slaveController.control(operation='power on', room_id='310c', current_temp=25)
-        tools = slaveController.control(operation='power on', room_id='312c', current_temp=25)
+        slaveController.control(operation='login', room_id='309c', user_id='shit')
+        slaveController.control(operation='login', room_id='311c', user_id='hhh')
+        slaveController.control(operation='login', room_id='310c', user_id='f3')
+        slaveController.control(operation='login', room_id='312c', user_id='nn')
+
+        tools = slaveController.control(operation='power on', room_id='309c')
+        tools = slaveController.control(operation='power on', room_id='311c')
+        tools = slaveController.control(operation='power on', room_id='310c')
+        tools = slaveController.control(operation='power on', room_id='312c')
+
         print(tools)
-        time.sleep(5)
+        time.sleep(10)
         # 改变目标温度
         slaveController.control(operation='change temp', room_id='309c', target_temp=21)
         slaveController.control(operation='change temp', room_id='310c', target_temp=21)
@@ -53,7 +55,7 @@ class ControllerTest(TestCase):
         slaveController.control(operation='change speed', room_id='309c', target_speed=2)
         time.sleep(5)
         # 获取费用
-        tools = slaveController.control(operation='get fee', room_id='309c')
+        tools = slaveController.control(operation='get status', room_id='309c')
         print(tools)
         # 房间关机
         slaveController.control(operation='power off', room_id='309c')

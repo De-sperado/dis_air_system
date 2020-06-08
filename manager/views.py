@@ -27,6 +27,7 @@ def query_report(request):
             content = controller.control(file_type='report', operation='query',
                                          room_id=room_id_get, date=date_get_da,
                                          qtype=qtype_get)
+            #TODO 加了一个energy 和 detail  detail是一个二维列表  列表中每行有6个信息  温控请求起止时间、温控请求的起止温度、风量消耗大小、每次温控请求所需费用
             content = {'message': "OK",
                        'result': {
                            'room_id': content.room_id,
@@ -38,6 +39,8 @@ def query_report(request):
                            'rdr_number': content.n_details,
                            'change_temp_times': content.temp_times,
                            'change_speed_times': content.speed_times,
+                           'eneygy':content.energy,
+                           'detail':content.detail
                        }
                        }
             return JsonResponse(content)
