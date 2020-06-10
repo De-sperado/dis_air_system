@@ -25,48 +25,6 @@ def set_param(request):
     except RuntimeError as error:
         return HttpResponse("Failed:"+str(error))
 
-#TODO：这个函数就没用了
-def init_param(request):
-    if request.method == "POST":
-        para_form = ParaForm(request.POST)
-        if para_form.is_valid():
-            highest_temper_get = float(para_form.cleaned_data['highest_temper'])
-            lowest_temper_get = float(para_form.cleaned_data['lowest_temper'])
-            low_speed_fee_get = float(para_form.cleaned_data['low_speed_fee'])
-            middle_speed_fee_get = float(para_form.cleaned_data['middle_speed_fee'])
-            high_speed_fee_get = float(para_form.cleaned_data['high_speed_fee'])
-            default_temper_get = float(para_form.cleaned_data['default_temper'])
-            default_speed_get = float(para_form.cleaned_data['default_speed'])
-            frequent_get = float(para_form.cleaned_data['frequent'])
-            mode_get = float(para_form.cleaned_data['mode'])
-            if mode_get == 0:
-                mode_get = "制冷"
-            else:
-                mode_get = "制热"
-            try:
-                controller = MasterController.instance()
-                controller.control(operation='set param', mode=mode_get,
-                                    temp_low_limit=lowest_temper_get, temp_high_limit=highest_temper_get,
-                                    default_target_temp=default_temper_get,
-                                    default_speed=default_speed_get,
-                                    fee_rate=(low_speed_fee_get, middle_speed_fee_get, high_speed_fee_get),
-                                   targetFeq=frequent_get)
-                request.session['is_on']=True
-                #start_up的代码
-                try:
-                    controller = MasterController.instance()
-                    controller.control(operation='turn on')
-                    content = {'message': 'OK', 'result': None}
-                    return JsonResponse(content, safe=False)
-                except RuntimeError as error:
-                    logger.error(error)
-                    return JsonResponse({'message': str(error)})
-                #return redirect('/users/administrator/func/')
-            except RuntimeError as error:
-                return JsonResponse({'message': str(error)})
-        else:
-            return render(request,'users/administrator/func/',{'message':'请检查输入内容！'})
-
 
 
 def check_room_state(request):

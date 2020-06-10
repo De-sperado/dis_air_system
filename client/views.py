@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from TemperatureController.controller import SlaveController
 from TemperatureController.controller import MasterController
 from _ast import operator
@@ -14,7 +14,8 @@ def check_out(request,room_id):
         controller2 = MasterController.instance()
         controller2.control(operation='check out', room_id=room_id)
         status = controller1.control(operation='get status', room_id=room_id)['status']
-        return render(request, 'client/client_status.html', {'room_id': room_id, 'status': status})
+        redirect_to = '/login/client_login/'
+        return redirect(redirect_to)
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 
@@ -90,6 +91,7 @@ def get_status(request,room_id):
     try:
         controller = SlaveController.instance()
         content = controller.control(operation='get status', room_id=room_id)
+
         return JsonResponse(content)
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
@@ -100,7 +102,10 @@ def dashboard(request, room_id):
         content = controller.control(operation='get status', room_id=room_id)
         status = content['status']
         target_temp = content['target_temper']
-        return render(request,'client/client_status.html',{'room_id':room_id,'status':status,'target_temp':target_temp})
+        controller = MasterController.instance()
+        content1 = controller.control(operation='get main status')
+        print(content1['frequent'])
+        return render(request,'client/client_status.html',{'room_id':room_id,'status':status,'target_temp':target_temp,'frequency':content1['frequent']})
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
 

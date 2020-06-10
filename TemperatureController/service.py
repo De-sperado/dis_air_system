@@ -186,6 +186,10 @@ class SlaverQueue:
         if service is not None:
             service.finish()
             self.queue.remove(service)
+        service = self.get_standby_service(room_id)
+        if service is not None:
+            service.finish()
+            self.standy_queue.remove(service)
 
     def update(self, mode) -> List[RunningSlaver]:
         """
@@ -206,10 +210,10 @@ class SlaverQueue:
                         reach_temp_services.append(service)
         temp=[]
         for service in self.standy_queue:
-            if service.room.current_temp < CURRENT_TEMP:
-                service.room.current_temp += TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
-            else:
-                service.room.current_temp -= TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
+            # if service.room.current_temp < CURRENT_TEMP:
+            #     service.room.current_temp += TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
+            # else:
+            #     service.room.current_temp -= TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
             if math.fabs(service.room.current_temp - service.room.target_temp) >= 1:
                 self.push(service)
                 temp.append(service)
@@ -223,9 +227,10 @@ class SlaverQueue:
             if q.start_time is ...:
                 q.start()
         if len(self.queue) > MAX_QUEUE:
-            if self.queue[MAX_QUEUE].waiting_time > MAX_WAITING_TIME:
+            if DISPATCH_METHOD=='RR' and self.queue[MAX_QUEUE].waiting_time > MAX_WAITING_TIME:
                 service = self.queue[0]
                 logger.info(service.room.room_id + '移出队列并加入队列尾')
+                service.room.status=STANDBY
                 service.finish()
                 self.queue.remove(service)
                 self.queue.append(service)
@@ -237,7 +242,11 @@ class SlaverQueue:
             if _.room.room_id == room_id:
                 return _
         return None
-
+    def get_standby_service(self,room_id):
+        for _ in self.__standy_queue:
+            if _.room.room_id == room_id:
+                return _
+        return None
 
 class Dispatcher:
     __instance_lock = threading.Lock()
@@ -270,6 +279,21 @@ class Dispatcher:
             self.__master_machine.status = STANDBY
         elif self.__master_machine.status == STANDBY and len(self.__slaver_queue.queue) > 0:
             self.__master_machine.status = RUNNING
+        for room_id in room_ids:
+            room=self.__master_machine.get_room(room_id)
+            if (room.status==CLOSED  or room.status==STANDBY) and math.fabs(room.current_temp-CURRENT_TEMP)>0.01:
+                temp=TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
+                if room.current_temp < CURRENT_TEMP:
+                    if room.current_temp +temp>CURRENT_TEMP:
+                        room.current_temp=CURRENT_TEMP
+                    else:
+                        room.current_temp +=temp
+                else:
+                    if room.current_temp - temp < CURRENT_TEMP:
+                        room.current_temp = CURRENT_TEMP
+                    else:
+                        room.current_temp -= temp
+
 
     def reset(self):
         self.timer.cancel()
@@ -365,7 +389,7 @@ class SlaverService:
         if math.fabs(room.current_temp - room.target_temp) >= 1:
             self.__slaver_queue.push(service)
         else:
-            self.__slaver_queue.standy_queue.push(service)
+            self.__slaver_queue.standy_queue.append(service)
         logger.info('房间' + room.room_id + '初始化服务, 目标温度: ' + str(target_temp) + ', 风速: ' + str(target_speed))
         return self.__master_machine.get_slave_status(room)
 
@@ -409,6 +433,10 @@ class SlaverService:
             air_conditioner_service.fee_rate = self.__master_machine.fee_rate[target_speed]
             self.__slaver_queue.dispatch()
             self.__slaver_queue.push(air_conditioner_service)
+        air_conditioner_service = self.__slaver_queue.get_standby_service(room_id)
+        if air_conditioner_service is not None:
+            air_conditioner_service.target_speed = target_speed
+            air_conditioner_service.fee_rate = self.__master_machine.fee_rate[target_speed]
         DBFacade.exec(Log.objects.create, room_id=room_id, operation=CHANGE_SPEED,
                       op_time=datetime.datetime.now())
         logger.info('房间' + room_id + '改变目标风速为' + str(target_speed))
@@ -426,6 +454,7 @@ class AdministratorService:
 
     def __init__(self):
         self.__master_machine = ...  # type: MasterMachine
+        self.__slave_service=...
         logger.info('初始化AdministratorService')
 
     @classmethod
@@ -456,6 +485,7 @@ class AdministratorService:
         self.__master_machine = MasterMachine.instance()
         Dispatcher.instance().timer.start()
         self.__master_machine.turn_on()
+        self.__slave_service=SlaverService.instance()
 
     def stop_master_machine(self) -> None:
         """关闭主控机"""
@@ -490,15 +520,18 @@ class AdministratorService:
     def get_main_status(self):
         if self.__master_machine is ...:
             return {'status':'关机',
-                    'mode':'None',
-                    'frequent':'None'}
+                    'mode':'制冷',
+                    'frequent':'1',
+                    'default_temp':'22'}
         return self.__master_machine.get_main_status()
 
     def check_in(self, room_id: str, user_id: str):
         if self.__master_machine is ...:
             logger.error('主控机未初始化')
             raise RuntimeError('主控机未初始化')
-        self.__master_machine.get_room(room_id).check_in(user_id)
+        room=self.__master_machine.get_room(room_id)
+        room.check_in(user_id)
+
 
     def check_out(self, room_id: str):
         if self.__master_machine is ...:

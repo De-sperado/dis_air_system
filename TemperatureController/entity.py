@@ -1,6 +1,7 @@
 """实体类"""
 import datetime
 import json
+import math
 import threading
 from typing import List, Dict, Optional
 
@@ -41,7 +42,7 @@ class MasterMachine:
         self.__fee_rate = (4, 5, 6)
         self.__rooms = []
         for _ in room_ids:
-            self.__rooms.append(Room(_, self.default_target_temp, self.default_speed))
+            self.__rooms.append(Room(_, self.default_target_temp, 0))
         logger.info('初始化主控机')
 
     @classmethod
@@ -57,7 +58,11 @@ class MasterMachine:
         self.__mode=mode
         self.__default_target_temp=default_temp
         self.__frequent=frequency
+        self.__temp_high_limit=TEMP_LIMT[mode][1]
+        self.__temp_low_limit = TEMP_LIMT[mode][0]
         logger.info('修改主控机参数为:mode' + mode + ' default_temp=' + str(default_temp)+' frequency='+str(frequency))
+        for room in self.__rooms:
+            room.target_temp=default_temp
 
     @property
     def mode(self):
@@ -153,7 +158,7 @@ class MasterMachine:
         for d in details:
             duration += (d.finish_time - d.start_time).seconds
             fee += d.fee
-            dd.append([d.start_time, d.finish_time, d.start_temp, d.finish_temp, d.fee])
+            dd.append([d.start_time, d.finish_time, round(d.start_temp,2), round(d.finish_temp,2),round(d.fee/5,2), round(d.fee,2)])
         on_off_times = 0
         temp_times = 0
         speed_times = 0
@@ -168,17 +173,17 @@ class MasterMachine:
         return {
             'status': self.status,
             'mode': self.mode,
-            'frequent': self.__frequent
+            'frequent': self.__frequent,
+            'default_temp':self.__default_target_temp
         }
 
     def get_slave_status(self, room) -> Dict:
         """获取指定从机的状态"""
-        mode = 0 if self.__mode == COOL else 1
         logger.debug('获取房间' + room.room_id + '状态')
         return {
             'room_id': room.room_id,
             'status': room.status,
-            'mode': mode,
+            'mode': self.__mode,
             'current_temper': round(room.current_temp, 2) if room.current_temp is not None else None,
             'speed': room.current_speed,
             'service_time': room.service_time,
@@ -257,7 +262,9 @@ class Room:
         if self.__status != AVAILABLE:
             logger.error('该房间已经有客人入住')
             raise RuntimeError('该房间已经有客人入住')
+
         self.__status = CLOSED
+
         self.__fee = 0
         self.__energy = 0
         self.__service_time = 0

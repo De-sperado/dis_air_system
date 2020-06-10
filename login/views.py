@@ -3,7 +3,7 @@ from . import models
 from .models import UserForm, RegisterForm, ClientForm
 from users.models import Client
 # Create your views here.
-from TemperatureController.controller import SlaveController
+from TemperatureController.controller import SlaveController,MasterController
 from django.http import JsonResponse
 
 def index(request):
@@ -17,6 +17,9 @@ def client_login(request):
             user_id_get = login_form.cleaned_data['identity']
             room_id = login_form.cleaned_data['roomId']
             status = '关机'
+            controller = MasterController.instance()
+            content1 = controller.control(operation='get main status')
+            frequency=content1['frequent']
             try:
                 controller = SlaveController.instance()
                 content = controller.control(operation='login', room_id=room_id, user_id=user_id_get)
@@ -78,9 +81,6 @@ def logout(request):
 
 
 def register(request):
-    if request.session.get('is_login', None):
-        # 登录状态不允许注册。你可以修改这条原则！
-        return redirect("/login/index/")
     if request.method == "POST":
         register_form = RegisterForm(request.POST)
         message = "请检查填写的内容！"
