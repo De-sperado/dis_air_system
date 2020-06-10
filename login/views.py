@@ -15,16 +15,17 @@ def client_login(request):
         message = "请检查填写的内容！"
         if login_form.is_valid():
             user_id_get = login_form.cleaned_data['identity']
-            room_id_get = login_form.cleaned_data['roomId']
+            room_id = login_form.cleaned_data['roomId']
+            status = '关机'
             try:
                 controller = SlaveController.instance()
-                content = controller.control(operation='login', room_id=room_id_get, user_id=user_id_get)
+                content = controller.control(operation='login', room_id=room_id, user_id=user_id_get)
                 content = {'message': "OK", 'result': content}
                 #redirect_to = '/users/client/func/'
-                return render(request,'client/dashboard.html',locals())
+                return render(request,'client/client_status.html',locals())
             except RuntimeError as error:
-                print("error了哦！")
-                return render(request,'client/dashboard.html',locals())
+                #print("error了哦！")
+                return JsonResponse({'message': str(error)})
             #xuyaogai!!!!!!!!!
             #!!!!!!!!!!!!!!!!!
         return render(request, 'login/client_login.html', locals())
@@ -59,9 +60,6 @@ def client_login(request):
     return render(request, 'login/client_login.html', locals())
 '''
 def login(request):
-    if request.session.get('is_login', None):
-        #不允许重复登录
-        return redirect('/index')
 
     if request.method == "POST":
         login_form = UserForm(request.POST)
@@ -77,8 +75,8 @@ def login(request):
                     request.session['is_login'] = True
                     request.session['user_id'] = user.id
                     request.session['user_name'] = user.name
-                    # return render(request, 'administrator/dashboard.html', locals())
-                    redirect_to = '/users/' + user.position +'/fun/'
+                    #print(user.position)
+                    redirect_to = '/users/' + user.position +'/func/'
                     return redirect(redirect_to)
                 else:
                     message = "密码或者职位不正确！"

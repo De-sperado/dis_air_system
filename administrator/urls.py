@@ -19,9 +19,9 @@ from administrator import views
 
 app_name = 'administrator'
 urlpatterns = [
-    url(r'^fun/',views.fun),
+    url(r'^func/',views.fun),
     url(r'^power_on', views.power_on),
-    url(r'^init_param', views.init_param),
+    url(r'^set_param', views.set_param),
     #url(r'^start_up', views.start_up),
     url(r'^check_room_state', views.check_room_state),
     url(r'^close', views.close),

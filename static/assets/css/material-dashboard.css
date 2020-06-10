@@ -11683,7 +11683,7 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
   position: absolute;
   left: -1px;
   top: -1px;
-  transition-running_time: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .form-check .form-check-label .circle {
@@ -11876,7 +11876,7 @@ form {
 .form-control:focus,
 .bmd-form-group.is-focused .form-control {
   background-size: 100% 100%, 100% 100%;
-  transition-running_time: 0.3s;
+  transition-duration: 0.3s;
   box-shadow: none;
 }
 
@@ -13274,7 +13274,7 @@ fieldset[disabled][disabled] .has-rose .form-control,
 }
 
 .bmd-form-group.bmd-collapse-inline .collapsing {
-  transition-running_time: 0.2s;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -14722,7 +14722,7 @@ h2.title {
 
 .dropdown-menu.showing {
   animation-name: bmd-dropdown-animation;
-  animation-running_time: 0.3s;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -14896,7 +14896,7 @@ a[aria-expanded="true"] .caret,
 .dropdown-menu.bootstrap-datetimepicker-widget {
   opacity: 0;
   transform: scale(0);
-  transition-running_time: 0.3s;
+  transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: 0 0;
   will-change: transform, opacity;
@@ -15603,8 +15603,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .sidebar-wrapper {
   -webkit-transition-property: top, bottom, width;
   transition-property: top, bottom, width;
-  -webkit-transition-running_time: .2s, .2s, .35s;
-  transition-running_time: .2s, .2s, .35s;
+  -webkit-transition-duration: .2s, .2s, .35s;
+  transition-duration: .2s, .2s, .35s;
   -webkit-transition-timing-function: linear, linear, ease;
   transition-timing-function: linear, linear, ease;
   -webkit-overflow-scrolling: touch;
@@ -18150,8 +18150,8 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */
 .animated {
-  -webkit-animation-running_time: 1s;
-  animation-running_time: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -18162,20 +18162,20 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .animated.hinge {
-  -webkit-animation-running_time: 2s;
-  animation-running_time: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 .animated.bounceIn,
 .animated.bounceOut {
-  -webkit-animation-running_time: .75s;
-  animation-running_time: .75s;
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
 }
 
 .animated.flipOutX,
 .animated.flipOutY {
-  -webkit-animation-running_time: .75s;
-  animation-running_time: .75s;
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
 }
 
 @-webkit-keyframes shake {
@@ -18984,7 +18984,7 @@ Copyright (c) 2015 Daniel Eden
 
   .nav-mobile-menu .dropdown .dropdown-menu.showing {
     animation: initial;
-    animation-running_time: 0s;
+    animation-duration: 0s;
   }
 
   .nav-mobile-menu .dropdown .dropdown-menu.hiding {

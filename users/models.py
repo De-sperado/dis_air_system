@@ -7,11 +7,11 @@ import django.utils.timezone as timezone
 class Client(models.Model):
     '''客户表'''
     room = (
-        ('309c', '309c'),
-        ('310c', '310c'),
-        ('311c', '311c'),
-        ('312c', '312c'),
-        ('f3', 'f3'),
+        ('309', '309'),
+        ('310', '310'),
+        ('311', '311'),
+        ('312', '312'),
+        ('313', '313'),
     )
     identity = models.CharField(max_length=128, unique=True)
     roomId = models.CharField(max_length=128, choices=room, default='309c')

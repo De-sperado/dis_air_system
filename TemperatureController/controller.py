@@ -1,7 +1,7 @@
 import threading
 from TemperatureController.service import (
     AdministratorService,  DetailService,
-    InvoiceService, ReportService, SlaveService)
+    InvoiceService, ReportService, SlaverService)
 from .tools import logger
 
 '''用户类别宏定义'''
@@ -20,7 +20,7 @@ class MasterController:
     def __init__(self):
         self.__adminService = AdministratorService.instance()
         self.__masterStart = False
-        self.__slaverService=SlaveService.instance()
+        self.__slaverService=SlaverService.instance()
         logger.info('初始化MasterController')
 
     @classmethod
@@ -41,8 +41,8 @@ class MasterController:
             self.__adminService.start_master_machine()
             self.__masterStart = True
         elif operation == 'set param':
-            self.__adminService.set_param(
-                kwargs.get('key'), kwargs.get('value')
+            self.__adminService.set_master_machine_param(
+                kwargs.get('mode'), kwargs.get('default_temp'),kwargs.get('frequency')
             )
         elif operation == 'turn off':
             self.__adminService.stop_master_machine()
@@ -76,7 +76,7 @@ class SlaveController:
         return cls._instance
 
     def __init__(self):
-        self.__slaverService = SlaveService.instance()
+        self.__slaverService = SlaverService.instance()
         self.__masterController = MasterController.instance()
         logger.info('初始化SlaveController')
 
@@ -98,10 +98,10 @@ class SlaveController:
             target_speed = kwargs.get('target_speed')
             self.__slaverService.change_speed(room_id, target_speed)
         elif operation == 'power on':
-            target_temp, speed = self.__slaverService.turn_on(room_id)
-            return self.__slaverService.init(room_id, target_temp, speed)
+            target_temp, speed = self.__slaverService.slave_machine_power_on(room_id)
+            return self.__slaverService.init_temp_and_speed(room_id, target_temp, speed)
         elif operation == 'power off':
-            self.__slaverService.turn_off(room_id)
+            self.__slaverService.slave_machine_power_off(room_id)
         elif operation == 'change mode':
             pass
         else:
@@ -135,12 +135,12 @@ class InfoController:
         room_id = kwargs.get('room_id')
         if file_type == 'report':
             report_service = ReportService.instance()
-            query_type = kwargs.get('query_type')
+            qtype = kwargs.get('qtype')
             date = kwargs.get('date')
             if operation == 'query':
-                return report_service.get_report(room_id, query_type, date)
+                return report_service.get_report(room_id, qtype, date)
             elif operation == 'print':
-                return report_service.print_report(room_id, query_type, date)
+                return report_service.print_report(room_id, qtype, date)
             else:
                 logger.error('不支持的操作')
                 raise RuntimeError('不支持的操作')

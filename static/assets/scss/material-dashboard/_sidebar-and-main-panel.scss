@@ -401,8 +401,8 @@
 .sidebar-wrapper{
     -webkit-transition-property: top,bottom,width;
     transition-property: top,bottom, width;
-    -webkit-transition-running_time: .2s,.2s, .35s;
-    transition-running_time: .2s,.2s, .35s;
+    -webkit-transition-duration: .2s,.2s, .35s;
+    transition-duration: .2s,.2s, .35s;
     -webkit-transition-timing-function: linear,linear,ease;
     transition-timing-function: linear,linear,ease;
     -webkit-overflow-scrolling: touch;

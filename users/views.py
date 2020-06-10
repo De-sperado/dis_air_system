@@ -4,25 +4,8 @@ from .models import *
 # Create your views here.
 
 
-def reception_func(request):
-    print("waht?")
-    path = request.get_full_path().split('/')[-1]
-    if path:
-        func = path.split('.')[0] #用于不同功能的处理
-        if request.method == 'GET':
-            if func == 'roomList':
-                rooms = room.objects.all()
-                return render(request, 'users/templates/' + path, {'rooms':rooms})
-            else:
-                return render(request, 'users/templates/' + path)
-    else:
-        return render(request,'users/templates/func.html')
 
-def client_func(request):
-    return render(request,'users/client/func.html')
 
-def manager_func(request):
-    return render(request,'users/manager/func.html')
 
 def checkin(request):
     if request.method == "POST":
@@ -47,5 +30,5 @@ def checkin(request):
             new_user.save()
             return redirect('/login/')  # 自动跳转到登录页面
    #register_form = RegisterForm()
-    return render(request,'users/reception/checkin.html',locals())
+    return render(request,'users/reception/reception_checkin.html',locals())
 

@@ -44,10 +44,10 @@ var mobile_menu_visible = 0,
 
 var seq = 0,
   delays = 80,
-  running_times = 500;
+  durations = 500;
 var seq2 = 0,
   delays2 = 80,
-  running_times2 = 500;
+  durations2 = 500;
 
 $(document).ready(function() {
 
@@ -507,7 +507,7 @@ md = {
         data.element.animate({
           opacity: {
             begin: seq * delays,
-            dur: running_times,
+            dur: durations,
             from: 0,
             to: 1,
             easing: 'ease'
@@ -526,7 +526,7 @@ md = {
         data.element.animate({
           opacity: {
             begin: seq2 * delays2,
-            dur: running_times2,
+            dur: durations2,
             from: 0,
             to: 1,
             easing: 'ease'

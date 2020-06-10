@@ -9,13 +9,13 @@
   transform: scale(0);
   transform-origin: 0 0;
   will-change: transform, opacity;
-  transition: transform $bmd-menu-expand-running_time $bmd-animation-curve-default,
-              opacity $bmd-menu-fade-running_time $bmd-animation-curve-default;
+  transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default,
+              opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 
   &.showing {
     animation-name: bmd-dropdown-animation;
-    animation-running_time: $bmd-menu-expand-running_time;
+    animation-duration: $bmd-menu-expand-duration;
     animation-fill-mode: forwards;
     animation-timing-function: $bmd-animation-curve-default;
   }
@@ -191,7 +191,7 @@ a[aria-expanded="true"] .caret,
 .dropdown-menu.bootstrap-datetimepicker-widget{
     opacity: 0;
     transform: scale(0);
-    transition-running_time: $bmd-menu-expand-running_time;
+    transition-duration: $bmd-menu-expand-duration;
     transition-timing-function: $bmd-animation-curve-default;
     transform-origin: 0 0;
     will-change: transform, opacity;

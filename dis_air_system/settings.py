@@ -207,5 +207,3 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
     'Pragma',
 )
-
-ALLOWED_HOSTS = ['127.0.0.1']

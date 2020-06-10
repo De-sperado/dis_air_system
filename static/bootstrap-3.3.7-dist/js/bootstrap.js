@@ -51,12 +51,12 @@ if (typeof jQuery === 'undefined') {
   }
 
   // http://blog.alexmaccaw.com/css-transitions
-  $.fn.emulateTransitionEnd = function (running_time) {
+  $.fn.emulateTransitionEnd = function (duration) {
     var called = false
     var $el = this
     $(this).one('bsTransitionEnd', function () { called = true })
     var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
-    setTimeout(callback, running_time)
+    setTimeout(callback, duration)
     return this
   }
 

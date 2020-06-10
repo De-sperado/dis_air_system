@@ -41,7 +41,7 @@ form {
   .bmd-form-group.is-focused & {
     background-size: $bmd-form-control-bg-size-active;
     //border-bottom: $input-btn-border-width solid $input-border-color;
-    transition-running_time: 0.3s;
+    transition-duration: 0.3s;
     box-shadow: none;
   }
 
