@@ -12,7 +12,7 @@ def index(request):
 def client_login(request):
     if request.method == "POST":
         login_form = ClientForm(request.POST)
-        message = "请检查填写的内容！"
+        message = "填写正确的房间号和身份证号！"
         if login_form.is_valid():
             user_id_get = login_form.cleaned_data['identity']
             room_id = login_form.cleaned_data['roomId']
@@ -20,6 +20,8 @@ def client_login(request):
             try:
                 controller = SlaveController.instance()
                 content = controller.control(operation='login', room_id=room_id, user_id=user_id_get)
+                if content['message']=='ERROR':
+                    return render(request, 'login/client_login.html', locals())
                 content = {'message': "OK", 'result': content}
                 #redirect_to = '/users/client/func/'
                 return render(request,'client/client_status.html',locals())
@@ -33,32 +35,6 @@ def client_login(request):
     login_form = ClientForm()
     return render(request, 'login/client_login.html', locals())
 
-'''def client_login1(request):
-    print('1111111111111')
-    if request.method == "POST":
-        login_form = ClientForm(request.POST)
-        message = "请检查填写的内容！"
-        if login_form.is_valid():
-            identity = login_form.cleaned_data['identity']
-            roomId = login_form.cleaned_data['roomId']
-            try:
-                user = Client.objects.get(identity=identity)
-                if user.roomId == roomId:
-                    #request.session['is_login'] = True
-                    request.session['user_id'] = user.identity
-                    request.session['user_room'] = user.roomId
-                    redirect_to = '/users/client/func/'
-                    return redirect(redirect_to)
-                else:
-                    message = "身份证号或者房间号不正确！"
-
-            except:
-                message = "身份证号不存在！"
-        return render(request, 'login/client_login.html', locals())
-
-    login_form = ClientForm()
-    return render(request, 'login/client_login.html', locals())
-'''
 def login(request):
 
     if request.method == "POST":

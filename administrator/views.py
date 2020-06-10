@@ -5,7 +5,6 @@ from TemperatureController.controller import MasterController
 from TemperatureController.tools import logger
 from .models import ParaForm
 
-#TODO:
 def power_on(request):
     controller = MasterController.instance()
     controller.control(operation='turn on')
@@ -13,9 +12,9 @@ def power_on(request):
     return render(request,'administrator/admin_MasterStatus.html',locals())
 
 
-#TODO:这个函数修改参数 传入参数key 和value   key可以为 mode temp frequent   value为目标值
 def set_param(request):
     mode=request.POST.get('mode')
+    print(request.POST.get('default_temp'))
     default_temp=int(request.POST.get('default_temp'))
     frequency=int(request.POST.get('frequency'))
     print(mode,default_temp,frequency)

@@ -211,7 +211,6 @@
                           <label class="bmd-label-floating">温度设置</label>
                           <button class="btn btn-white round" type="button" id="up"><i class="material-icons">arrow_drop_up</i></button>
                           <button class="btn btn-white round" type="button" id="down"><i class="material-icons">arrow_drop_down</i></button>
-                          <p id="temp">{{ target_temp }}</p>
                         </div>
                       </div>
                     </div>
@@ -527,18 +526,15 @@
 
      $('#up').click(function () {
        var room_id = $("#room_id").attr("value");
-       var temp = parseInt($("#temp").text());
-        $("#temp").text(temp+1);
+       var temp = parseInt($("#target_temp").text());
         $.ajax({
                     type:"get",
                     data:{
                         'room_id': room_id,
-                        'target_temper': temp
+                        'target_temper': temp+1
                     },
                     url:'http://127.0.0.1:8000/users/client/change_temper/',
-                    success:function(){
-                      $("#target_temp").html(temp+1);
-                    },
+
                     error:function () {
                         alert("error:"+data['message']);
                     }
@@ -546,19 +542,14 @@
     });
     $('#down').click(function () {
         var room_id = $("#room_id").attr("value");
-        var temp = parseInt($("#temp").text());
-        $("#temp").text(temp-1);
-       $("#target_temp").html(temp-1);
+        var temp = parseInt($("#target_temp").text());
         $.ajax({
                     type:"get",
                     data:{
                         'room_id': room_id,
-                        'target_temper': temp
+                        'target_temper': temp-1
                     },
                     url:'http://127.0.0.1:8000/users/client/change_temper/',
-                    success:function(){
-                      $("#target_temp").html(temp+1);
-                    },
                     error:function () {
                         alert("error:"+data['message']);
                     }

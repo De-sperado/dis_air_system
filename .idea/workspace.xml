@@ -2,127 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/manager/manager_report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/reception/reception_invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administrator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/administrator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dis_air_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dis_air_system/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/slave/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/material-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/material-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/material-dashboard.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/material-dashboard.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/material-dashboard.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/material-dashboard.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/core/bootstrap-material-design.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/core/bootstrap-material-design.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/core/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/core/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/material-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/material-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/material-dashboard.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/material-dashboard.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/material-dashboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/material-dashboard.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/fullcalendar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/fullcalendar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/jquery.nicescroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/jquery.slimscroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/modernizr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_dropdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_radios.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_radios.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_responsive.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_sidebar-and-main-panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/mixins/_animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/mixins/_animations.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/plugins/_animate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/plugins/_animate.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/scss/material-dashboard/variables/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/scss/material-dashboard/variables/_menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/bkp/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/bkp/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/bkp/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/bkp/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/fonts/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/ion-icon/ionicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/fonts/materialdesignicons-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/fonts/materialdesignicons-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/fonts/materialdesignicons-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/fonts/materialdesignicons-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/fonts/materialdesignicons-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/material-design-icon/materialdesignicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/fonts/Simple-Line-Icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/fonts/Simple-Line-Icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/fonts/Simple-Line-Icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/fonts/Simple-Line-Icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/fonts/Simple-Line-Icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/simple-line-icon/simple-line-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/themify-icon/fonts/themify.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/themify-icon/fonts/themify.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/themify-icon/fonts/themify.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/themify-icon/fonts/themify.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/icons/themify-icon/themify-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.4.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.4.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/system.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/init.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/slavers_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/checkout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/on_off.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/client_TurnONOFF.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/param.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/maps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/notifications.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/rtl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/examples/upgrade.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manager/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manager/func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client/client_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/client_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_checkin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_checkin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_invoice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,12 +31,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="637" />
-    <option name="y" value="23" />
-    <option name="width" value="1359" />
-    <option name="height" value="877" />
-  </component>
   <component name="ProjectId" id="1czkHwl5cjoJ9hWMgWGp2FSuT64" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -159,7 +44,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/administrator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -172,11 +57,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\课件\大三下\软件工程\dis_air_system\templates" />
       <recent name="E:\课件\大三下\软件工程\dis_air_system\templates\administrator" />
       <recent name="E:\课件\大三下\软件工程\dis_air_system\templates\client" />
       <recent name="$PROJECT_DIR$/templates/examples" />
       <recent name="$PROJECT_DIR$/templates/client" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TemperatureController" />
