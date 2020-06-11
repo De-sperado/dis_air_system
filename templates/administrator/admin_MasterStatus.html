@@ -277,7 +277,7 @@
         var default_temp = $("#cold_mode").attr("hidden") ? $("#slider-warm-amount").text() : $("#slider-cold-amount").text();
         var frequency = $("#slider-refresh-amount").val();
         $.ajax({
-            url: 'http://127.0.0.1:8000/users/administrator/set_param',
+            url: '/users/administrator/set_param',
             type: 'post',
             data: {
                 'mode': mode,

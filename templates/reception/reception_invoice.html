@@ -222,7 +222,7 @@
                         'room_id': room_id,
                     },
                     responseType: "blob",
-                    url:'http://127.0.0.1:8000/users/reception/print_detail/',
+                    url:'/users/reception/print_detail/',
                     success:function (response) {
                         const blob = new Blob([response]);
                         const aEle = document.createElement('a'); // 创建a标签
@@ -243,7 +243,7 @@
                     data:{
                         'room_id': room_id
                     },
-                    url:'http://127.0.0.1:8000/users/reception/query_detail/',
+                    url:'/users/reception/query_detail/',
                     success:function (data) {
                         $('#details').html('');
 
