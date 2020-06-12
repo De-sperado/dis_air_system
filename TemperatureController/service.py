@@ -404,7 +404,10 @@ class SlaverService:
         if not self.__master_machine.temp_low_limit <= target_temp <= self.__master_machine.temp_high_limit:
             logger.error('目标温度不合法')
             raise RuntimeError('目标温度不合法')
+
         room = self.__master_machine.get_room(room_id)
+        if (target_temp>room.current_temp and self.__master_machine.mode==COOL) or (target_temp<room.current_temp and self.__master_machine.mode==HOT):
+            return
         room.target_temp = target_temp
         DBFacade.exec(Log.objects.create, room_id=room_id, operation=CHANGE_TEMP,
                       op_time=datetime.datetime.now())
