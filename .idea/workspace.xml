@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dis_air_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dis_air_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dis_air_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/templates/query_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/templates/query_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/system.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/administrator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/client/client_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/client_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manager/manager_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manager/manager_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/reception_bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_bill.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/reception_checkin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_checkin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/reception_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_invoice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +193,8 @@
       <workItem from="1591759540394" duration="25844000" />
       <workItem from="1591804243031" duration="31000" />
       <workItem from="1591854534163" duration="185000" />
+      <workItem from="1591952310722" duration="174000" />
+      <workItem from="1591959654688" duration="877000" />
     </task>
     <servers />
   </component>

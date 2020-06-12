@@ -73,12 +73,13 @@ def close(request):
     content = {'message': 'OK', 'result': controller.control(operation='get main status')}
     return render(request, 'administrator/admin_MasterStatus.html', locals())
 
-def check_link():
+def check_link(request):
     global linkedNum
     global  linkTimer
     global  linkedSlave
     global  linkThreshold
     global  t
+    print("检查连接")
     if linkedNum:   #当有已连接的从机时执行这个操作
         for i in range(5):
             if linkedSlave[i]:
@@ -88,7 +89,7 @@ def check_link():
                     controller.control(operation='power off', room_id=room_id)
                     linkedNum-=1
                     linkedSlave[i]=False
-                    return render(request, 'administrator/admin_SlaveStatus.html', {'room_id':room_id, 'link_broken': true})
+                    return render(request, 'administrator/admin_SlaveStatus.html', {'room_id':room_id, 'link_broken': True})
 
     t = Timer(1, check_link)
     t.start()
@@ -99,9 +100,10 @@ def update_link_timer(request):
     '''更新连接时间'''
     global linkTimer
     global linkedSlave
-    global roomToIndex
+    global roomToIndexT
     global linkedNum
     room_id=request.POST.get('room_id')
+    print(f'更新{room_id}连接时间')
     i=roomToIndex[room_id]
     if not linkedSlave[i]:
         linkedSlave[i]=True
