@@ -2,12 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dis_air_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dis_air_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/entity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureController/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperatureController/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/administrator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/administrator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dis_air_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/client_login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/templates/login/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reception/templates/query_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reception/templates/query_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_invoice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reception/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slave/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/message.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/message.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/system.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/client/client_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/client_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/manager/manager_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manager/manager_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_checkin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_checkin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reception/reception_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_invoice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,76 +66,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="sqlite_master: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite [2]" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="sqlite_master: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="identifier.sqlite [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -108,8 +80,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="172" />
+    <option name="y" value="240" />
+    <option name="width" value="1359" />
+    <option name="height" value="877" />
+  </component>
   <component name="ProjectId" id="1czkHwl5cjoJ9hWMgWGp2FSuT64" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -141,11 +119,11 @@
       <recent name="$PROJECT_DIR$/templates/client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/TemperatureController" />
       <recent name="$PROJECT_DIR$/templates/manager" />
       <recent name="$PROJECT_DIR$/templates/client" />
-      <recent name="$PROJECT_DIR$/templates/administrator" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.test.html">
@@ -169,6 +147,27 @@
         <item itemvalue="JavaScript Debug.user.html" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:identifier.sqlite" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:identifier.sqlite [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -199,6 +198,10 @@
       <workItem from="1591952310722" duration="174000" />
       <workItem from="1591959654688" duration="877000" />
       <workItem from="1592009399999" duration="2539000" />
+      <workItem from="1592028927278" duration="634000" />
+      <workItem from="1592038527932" duration="6726000" />
+      <workItem from="1592050605877" duration="119000" />
+      <workItem from="1592051195306" duration="977000" />
     </task>
     <servers />
   </component>
@@ -212,13 +215,29 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591785473217">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1591785473217" />
+    <state width="1024" height="109" key="GridCell.Tab.0.bottom" timestamp="1592052545646">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="109" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592052545646" />
+    <state width="1024" height="109" key="GridCell.Tab.0.center" timestamp="1592052545646">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="109" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1592052545646" />
+    <state width="1024" height="109" key="GridCell.Tab.0.left" timestamp="1592052545645">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="109" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1592052545645" />
+    <state width="1024" height="109" key="GridCell.Tab.0.right" timestamp="1592052545646">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="109" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1592052545646" />
     <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1591785438676">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -227,9 +246,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="270" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1591538772417" />
-    <state x="377" y="122" width="782" height="590" key="find.popup" timestamp="1591782971376">
+    <state x="377" y="122" width="782" height="590" key="find.popup" timestamp="1592054853947">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="377" y="122" width="782" height="590" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1591782971376" />
+    <state x="377" y="122" width="782" height="590" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1592054853947" />
   </component>
 </project>

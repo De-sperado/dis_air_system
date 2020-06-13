@@ -44,7 +44,8 @@
 
       <div class="logo"><a  class="simple-text logo-normal">
           管理员界面
-        </a></div>
+        </a>
+      </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active">
@@ -75,6 +76,9 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" >主控机状态</a>
+              {% if message %}
+              <a class="navbar-brand" style="color: red;">⚠️{{ message }}⚠️</a>
+              {% endif %}
           </div>
 
           <div class="collapse navbar-collapse justify-content-end">
@@ -219,14 +223,11 @@
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
-
     });
   </script>
 
 
 <script>
-
-
 
     $("#cold").click(function() {
         $("#cold_mode").removeAttr("hidden");
@@ -242,6 +243,8 @@
         var mode = $("#cold_mode").attr("hidden") ? '制热': '制冷';
         var default_temp = $("#cold_mode").attr("hidden") ? $("#slider-warm-amount").text() : $("#slider-cold-amount").text();
         var frequency = $("#slider-refresh-amount").val();
+        if (!default_temp)  default_temp={{content.result.default_temp}};
+        if (!frequency) frequency = {{content.result.frequent}};
         $.ajax({
             url: '/users/administrator/set_param',
             type: 'post',
@@ -256,8 +259,8 @@
                     $("#mode").text(mode);
                     $("#freq").text(frequency);
                     $("#temp").text(default_temp);
-
-                } else {
+                }
+                else{
                     alert(data);
                 }
             },

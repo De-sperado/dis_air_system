@@ -1,13 +1,7 @@
-"""
-持久化层
-
-包含各持久化类
-"""
 from django.db import models
 
-
+#详单类
 class DetailModel(models.Model):
-    """详单"""
 
     detail_id = models.IntegerField(primary_key=True)
     room_id = models.CharField(max_length=16)
@@ -20,9 +14,9 @@ class DetailModel(models.Model):
     fee = models.FloatField()
     user_id = models.CharField(max_length=20)
 
-
+#操作日志类
 class Log(models.Model):
-    """操作日志"""
+
     room_id = models.CharField(max_length=16)
     operation = models.CharField(max_length=32)
     op_time = models.DateTimeField()

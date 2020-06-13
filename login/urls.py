@@ -18,8 +18,7 @@ from login import views
 
 app_name= 'login'
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^index/', views.index),
+    url(r'^$', views.login),
     url(r'^login/', views.login),
     url(r'^client_login/', views.client_login),
     url(r'^logout/', views.logout),

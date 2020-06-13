@@ -20,39 +20,41 @@ def power_on(request):
     global timerStart
     global t
     if not timerStart:  # 若定时器没开启则开启定时器
+        timerStart = True
         t.start()
-
     controller = MasterController.instance()
     controller.control(operation='turn on')
     content = {'message': 'OK', 'result': controller.control(
         operation='get main status')}
     return render(request, 'administrator/admin_MasterStatus.html', locals())
 
-
 def set_param(request):
-    mode = request.POST.get('mode')
-    print(request.POST.get('default_temp'))
-    default_temp = int(request.POST.get('default_temp'))
-    frequency = int(request.POST.get('frequency'))
-    print(mode, default_temp, frequency)
-    try:
-        controller = MasterController.instance()
-        controller.control(operation='set param', mode=mode,
-                           default_temp=default_temp, frequency=frequency)
-        return HttpResponse("Success")
-    except RuntimeError as error:
-        return HttpResponse("Failed:"+str(error))
+    controller = MasterController.instance()
+    status = controller.control(operation='get main status')['status']
+    if(status == '关机'):
+        return HttpResponse("请先开机！")
+    else:
+        mode = request.POST.get('mode')
+        default_temp = int(request.POST.get('default_temp'))
+        frequency = int(request.POST.get('frequency'))
+        try:
+            controller.control(operation='set param', mode=mode,
+                               default_temp=default_temp, frequency=frequency)
+            return HttpResponse("Success")
+        except RuntimeError as error:
+            return HttpResponse("Failed:"+str(error))
 
 
 def check_room_state(request):
+    controller = MasterController.instance()
     try:
-        controller = MasterController.instance()
-        #content = {'message': 'OK', 'result': controller.control(operation='get status')}
         content = controller.control(operation='get status')
         print(content)
         return render(request, 'administrator/admin_SlaversStatus.html', locals())
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        content = {'result': controller.control(operation='get main status')}
+        message = str(error)
+        return render(request, 'administrator/admin_MasterStatus.html', locals())
 
 
 # TODO:从这里获得主控的信息
@@ -64,7 +66,6 @@ result为 {
         }
 '''
 
-
 def fun(request):
     try:
         controller = MasterController.instance()
@@ -73,8 +74,8 @@ def fun(request):
         print(content)
         return render(request, 'administrator/admin_MasterStatus.html', locals())
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
-
+        return render(request, '/login/login.html', {'message':str(error)})
+        #return JsonResponse({'message': str(error)})
 
 def close(request):
     controller = MasterController.instance()
@@ -83,7 +84,6 @@ def close(request):
         operation='get main status')}
     return render(request, 'administrator/admin_MasterStatus.html', locals())
 
-
 def check_link_status():
     global linkedNum
     global linkTimer
@@ -91,7 +91,6 @@ def check_link_status():
     global linkThreshold
     global linkBroken
     global t
-    print("检查连接")
     if linkedNum:  # 当有已连接的从机时执行这个操作
         for i in range(5):
             if linkedSlave[i]:
@@ -119,7 +118,6 @@ def link(request):
     global linkedNum
     global linkBroken
     room_id = request.POST.get('room_id')
-    print(f'更新{room_id}连接时间')
     i = roomToIndex[room_id]
     if not linkedSlave[i]:
         linkedSlave[i] = True
@@ -128,14 +126,13 @@ def link(request):
     linkBroken[i] = 0
     return HttpResponse(str(room_id) + 'connecting.')
 
-
 def check_link(request):
     global linkBroken
     global roomToIndex
     content = {"room_id": None, "linkBroken": 0}
     for i in range(5):
         if linkBroken[i] == True:
-            print(f'i={i}\t{indexToRoom[i]}以断开连接')
+            print('i=',i,'\t',indexToRoom[i],'以断开连接')
             # slaveController=SlaveController.instance()
             # kwargs={'poweroff':'poweroff','roomid':indexToRoom[i]}
             # slaveController.control(poweroff='poweroff',room_id=indexToRoom[i])

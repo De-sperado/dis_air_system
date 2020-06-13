@@ -1,7 +1,7 @@
 import threading
 from TemperatureController.service import (
     AdministratorService,  DetailService,
-    InvoiceService, ReportService, SlaverService)
+    InvoiceService, ReportService, SlaveService)
 from .tools import logger
 
 '''用户类别宏定义'''
@@ -14,13 +14,12 @@ MANAGER = 13
 
 class MasterController:
     '''主控机操作控制器'''
-    '''所有与logger有关的都还没写，每一步的logger是应该放在service还是放在controller？'''
     _instance_lock = threading.Lock()
 
     def __init__(self):
         self.__adminService = AdministratorService.instance()
         self.__masterStart = False
-        self.__slaverService=SlaverService.instance()
+        self.__slaverService=SlaveService.instance()
         logger.info('初始化MasterController')
 
     @classmethod
@@ -60,9 +59,8 @@ class MasterController:
             return self.__adminService.check_out(room_id)
         else:
             logger.error('不支持的操作')
-            raise RuntimeError('不支持的操作')
 
-
+#从控控制器
 class SlaveController:
     _instance_lock = threading.Lock()
 
@@ -76,14 +74,11 @@ class SlaveController:
         return cls._instance
 
     def __init__(self):
-        self.__slaverService = SlaverService.instance()
+        self.__slaverService = SlaveService.instance()
         self.__masterController = MasterController.instance()
         logger.info('初始化SlaveController')
 
     def control(self, **kwargs):
-        if not self.__masterController.IsMasterStart():
-            logger.error('主控机未启动')
-            raise RuntimeError('主控机未启动')
         operation = kwargs.get('operation')
         room_id = kwargs.get('room_id')
         if operation == 'login':
@@ -127,9 +122,6 @@ class InfoController:
         logger.info('初始化InfoController')
 
     def control(self, **kwargs):
-        if not self.__masterController.IsMasterStart():
-            logger.error('主控机未启动')
-            raise RuntimeError('主控机未启动')
         file_type = kwargs.get('file_type')
         operation = kwargs.get('operation')
         room_id = kwargs.get('room_id')
@@ -143,7 +135,6 @@ class InfoController:
                 return report_service.print_report(room_id, qtype, date)
             else:
                 logger.error('不支持的操作')
-                raise RuntimeError('不支持的操作')
         elif file_type == 'detail':
             detail_service = DetailService.instance()
             if operation == 'query':
@@ -152,7 +143,6 @@ class InfoController:
                 return detail_service.print_detail(room_id)
             else:
                 logger.error('不支持的操作')
-                raise RuntimeError('不支持的操作')
         elif file_type == 'invoice':
             invoice_service = InvoiceService.instance()
             if operation == 'query':
@@ -161,9 +151,7 @@ class InfoController:
                 return invoice_service.print_invoice(room_id)
             else:
                 logger.error('不支持的操作')
-                raise RuntimeError('不支持的操作')
         else:
             logger.error('不支持的操作')
-            raise RuntimeError('不支持的操作')
 
 

@@ -6,8 +6,7 @@ from users.models import Client
 from TemperatureController.controller import SlaveController,MasterController
 from django.http import JsonResponse
 
-def index(request):
-    return render(request,'login/index.html')
+
 
 def client_login(request):
     if request.method == "POST":
@@ -29,10 +28,10 @@ def client_login(request):
                 #redirect_to = '/users/client/func/'
                 return render(request,'client/client_status.html',locals())
             except RuntimeError as error:
-                #print("error了哦！")
-                return JsonResponse({'message': str(error)})
-            #xuyaogai!!!!!!!!!
-            #!!!!!!!!!!!!!!!!!
+                message = str(error)
+                return render(request, 'login/client_login.html', locals())
+
+
         return render(request, 'login/client_login.html', locals())
 
     login_form = ClientForm()
@@ -71,13 +70,13 @@ def login(request):
 def logout(request):
     if not request.session.get('is_login', None):
         # 如果本来就未登录，也就没有登出一说
-        return redirect("/login/index/")
+        return redirect("/")
     request.session.flush()
     # 或者使用下面的方法
     # del request.session['is_login']
     # del request.session['user_id']
     # del request.session['user_name']
-    return redirect("/login/index/")
+    return redirect("/")
 
 
 def register(request):

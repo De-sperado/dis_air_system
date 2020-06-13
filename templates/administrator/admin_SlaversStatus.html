@@ -22,7 +22,7 @@
   <script src="{% static 'js/message.js' %}"></script>
 </head>
 
-<body class="">
+<body>
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="{% static 'assets/img/sidebar-1.jpg' %}">
       <!--
@@ -35,16 +35,23 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="/users/administrator/func/">
               <i class="material-icons">dashboard</i>
               <p>主控机状态</p>
             </a>
           </li>
-          <li class="nav-item active  ">
-            <a class="nav-link" href="/users/administrator/check_room_state/">
-              <i class="material-icons">person</i>
+          <li class="nav-item active">
+                <a class="nav-link" href="/users/administrator/check_room_state/">
+              <i class="material-icons">face</i>
               <p>从控机状态</p>
+            </a>
+          </li>
+            <li class="nav-item ">
+
+            <a class="nav-link" {% if content.result.status == '关机' %} href="/users/administrator/power_on/" {% else %} href="/users/administrator/close/" {% endif %}>
+<i class="material-icons">power_settings_new</i>
+                {% if content.result.status == "关机" %}开机{% else %}关机{% endif %}
             </a>
           </li>
           </ul>
@@ -117,146 +124,45 @@
       </div>
       </div>
     </div>
-  </div>
-    <!--        <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM309</h4>
-                </div>
-                <div class="card-footer">
-
-                </div>
-              </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM2</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM3</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM4</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" ></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM5</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" ></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">ROOM6</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>-->
   <!--   Core JS Files   -->
   <script src="{% static 'assets/js/core/jquery.min.js' %}"></script>
   <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
   <script src="{% static 'assets/js/core/bootstrap-material-design.min.js' %}"></script>
-<!--  <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
 <!--  &lt;!&ndash; Plugin for the momentJs  &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/moment.min.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/moment.min.js' %}"></script>
 <!--  &lt;!&ndash;  Plugin for Sweet Alert &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/sweetalert2.js' %}"></script>-->
+<script src="{% static 'assets/js/plugins/sweetalert2.js' %}"></script>
 <!--  &lt;!&ndash; Forms Validations Plugin &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/jquery.validate.min.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/jquery.validate.min.js' %}"></script>
 <!--  &lt;!&ndash; Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/jquery.bootstrap-wizard.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/jquery.bootstrap-wizard.js' %}"></script>
 <!--  &lt;!&ndash;	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/bootstrap-selectpicker.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/bootstrap-selectpicker.js' %}"></script>
 <!--  &lt;!&ndash;  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/bootstrap-datetimepicker.min.js' %}"></script>
 <!--  &lt;!&ndash;  DataTables.net Plugin, full documentation here: https://datatables.net/  &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/jquery.dataTables.min.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/jquery.dataTables.min.js' %}"></script>
 <!--  &lt;!&ndash;	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/bootstrap-tagsinput.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/bootstrap-tagsinput.js' %}"></script>
 <!--  &lt;!&ndash; Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/jasny-bootstrap.min.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/jasny-bootstrap.min.js' %}"></script>
 <!--  &lt;!&ndash;  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/fullcalendar.min.js' %}"></script>-->
+ <script src="{% static 'assets/js/plugins/fullcalendar.min.js' %}"></script>
 <!--  &lt;!&ndash; Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/jquery-jvectormap.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/jquery-jvectormap.js' %}"></script>
 <!--  &lt;!&ndash;  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/nouislider.min.js' %}"></script>-->
+<script src="{% static 'assets/js/plugins/nouislider.min.js' %}"></script>
   <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <!--  &lt;!&ndash; Library for adding dinamically elements &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/arrive.min.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/arrive.min.js' %}"></script>
 <!--  &lt;!&ndash;  Google Maps Plugin    &ndash;&gt;-->
-<!--  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!--  &lt;!&ndash; Chartist JS &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/chartist.min.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/chartist.min.js' %}"></script>
 <!--  &lt;!&ndash;  Notifications Plugin    &ndash;&gt;-->
-<!--  <script src="{% static 'assets/js/plugins/bootstrap-notify.js' %}"></script>-->
+  <script src="{% static 'assets/js/plugins/bootstrap-notify.js' %}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{% static 'assets/js/material-dashboard.js' %}" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
@@ -293,20 +199,6 @@
       });
 
     }
-    function flush(){
-      window.location.reload();
-    }
-    function count(limit){
-      limit--;
-      if(limit<0){
-        limit=5;
-        flush();
-      }
-      //$('#time').text(limit+'秒后更新');
-      setTimeout(function () {
-        count(limit);
-      },1000);
-    }
     function check_link() {
       var bre=0;
       $.ajax({
@@ -318,8 +210,7 @@
                     alert(room_id+'房间已断开连接！');
                 } 
             },
-        })
-
+        });
       setTimeout(function() {
         check_link();
       }, 1000);
@@ -327,7 +218,7 @@
     $(document).ready(function() {
       update();
       check_link();
-      $().ready(function() {
+      /*$().ready(function() {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -344,7 +235,6 @@
           if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
             $('.fixed-plugin .dropdown').addClass('open');
           }
-
         }
 
         $('.fixed-plugin a').click(function(event) {
@@ -395,7 +285,6 @@
 
           $(this).parent('li').siblings().removeClass('active');
           $(this).parent('li').addClass('active');
-
 
           var new_image = $(this).find("img").attr('src');
 
@@ -494,6 +383,7 @@
 
         });
       });
+    });*/
     });
   </script>
   <script>

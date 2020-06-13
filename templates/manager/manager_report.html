@@ -57,10 +57,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="/">Log out</a>
                 </div>
               </li>
             </ul>
@@ -92,7 +89,7 @@
               </div>
             <div class="col-md-3">
                 <p>填选日期</p>
-                <input type="date" id="date" class="btn btn-success round">
+                <input type="date" id="date" class="btn btn-success round" >
               </div>
             <div class="col-md-3">
                 <button class="btn btn-success round" onclick="query() ">查询</button><br>
@@ -293,6 +290,7 @@
                     responseType: "blob",
                     url:'/users/manager/print_report/',
                     success:function (response) {
+                        if (!response['message']) {
                         const blob = new Blob([response]);
                         const aEle = document.createElement('a'); // 创建a标签
                         const href = window.URL.createObjectURL(blob); // 创建下载的链接
@@ -302,6 +300,9 @@
                         aEle.click(); // 点击下载
                         document.body.removeChild(aEle); // 下载完成移除元素
                         window.URL.revokeObjectURL(href) // 释放掉blob对象
+                        }
+                        else
+                            alert("error:"+response['message']);
                     }
                 });
   }
@@ -319,6 +320,7 @@
                     },
                     url:'/users/manager/query_report/',
                     success:function (data) {
+                        if(data['message'] == 'OK'){
                         $("#room_id_get").html(data['result']['room_id']);
                         $("#start_time").html(data['result']['start_time']);
                         $("#finish_time").html(data['result']['finish_time']);
@@ -339,10 +341,10 @@
                                 tr.appendChild(td);
                             });
                             tbody.appendChild(tr);
-                        });
-                    },
-                    error:function () {
-                        alert("error:"+data['message']);
+                        });}
+                        else{
+                            alert("error:"+data['message']);
+                        }
                     }
                 });
   }

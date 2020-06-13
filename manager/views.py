@@ -7,20 +7,19 @@ from TemperatureController.controller import InfoController
 from TemperatureController.tools import logger
 
 def func(request):
-    report_form = ReportForm()
-    return render(request,'manager/manager_report.html',locals())
+    return render(request,'manager/manager_report.html')
 
 def query_report(request):
     qtype_get = request.GET.get('qtype')
     room_id_get = request.GET.get('room_id')
     date_get = request.GET.get('date')
     print(qtype_get,room_id_get,date_get)
-    if (not qtype_get) or (not room_id_get) or (not date_get):
-        logger.error('缺少参数报表类型，房间号或起始时间')
-        raise RuntimeError('缺少参数报表类型，房间号或起始时间')
-    date_get_sp = date_get.split("-")
-    date_get_da = datetime.datetime(int(date_get_sp[0]), int(date_get_sp[1]), int(date_get_sp[2]))
     try:
+        if (not qtype_get) or (not room_id_get) or (not date_get):
+            logger.error('缺少参数报表类型，房间号或起始时间')
+            raise RuntimeError('缺少参数报表类型，房间号或起始时间')
+        date_get_sp = date_get.split("-")
+        date_get_da = datetime.datetime(int(date_get_sp[0]), int(date_get_sp[1]), int(date_get_sp[2]))
         controller = InfoController.instance()
         content = controller.control(file_type='report', operation='query',
                                      room_id=room_id_get, date=date_get_da,
@@ -51,12 +50,12 @@ def print_report(request):
     room_id_get = request.GET.get('room_id')
     date_get = request.GET.get('date')
     print(qtype_get,room_id_get,date_get)
-    if (not qtype_get) or (not room_id_get) or (not date_get):
-        logger.error('缺少参数报表类型，房间号或起始时间')
-        raise RuntimeError('缺少参数报表类型，房间号或起始时间')
-    date_get_sp = date_get.split("-")
-    date_get_da = datetime.datetime(int(date_get_sp[0]), int(date_get_sp[1]), int(date_get_sp[2]))
     try:
+        if (not qtype_get) or (not room_id_get) or (not date_get):
+            logger.error('缺少参数报表类型，房间号或起始时间')
+            raise RuntimeError('缺少参数报表类型，房间号或起始时间')
+        date_get_sp = date_get.split("-")
+        date_get_da = datetime.datetime(int(date_get_sp[0]), int(date_get_sp[1]), int(date_get_sp[2]))
         controller = InfoController.instance()
         filename = controller.control(file_type='report', operation='print',
                                      room_id=room_id_get, date=date_get_da,
@@ -70,5 +69,3 @@ def print_report(request):
         return response
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
-
-

@@ -89,12 +89,13 @@
           <div class="row">
             <div class="col-md-3">
               <p>选择房间</p>
-              <select id="room_id" class="btn btn-info round">
-                <option>309</option>
-                <option>310</option>
-                <option>311</option>
-                <option>312</option>
-                <option>313</option>
+              <select id="room_id" class="btn btn-success round">
+                <option value="0">请选择房间</option>
+                <option value="309">309</option>
+                <option value="310">310</option>
+                <option value="311">311</option>
+                <option value="312">312</option>
+                <option value="313">313</option>
               </select>
             </div>
             <button class="btn btn-success round" onclick="query() ">查询</button><br>
@@ -206,51 +207,62 @@
   <script>
     function print() {
       var room_id = $("#room_id").val();
-      $.ajax({
-        type: "get",
-        data: {
-          'room_id': room_id,
-        },
-        responseType: "blob",
-        url: '/users/reception/print_invoice/',
-        success: function (response) {
-          const blob = new Blob([response]);
-          const aEle = document.createElement('a'); // 创建a标签
-          const href = window.URL.createObjectURL(blob); // 创建下载的链接
-          aEle.href = href;
-          aEle.download = room_id + '账单' + '.txt'; // 下载后文件名
-          document.body.appendChild(aEle);
-          aEle.click(); // 点击下载
-          document.body.removeChild(aEle); // 下载完成移除元素
-          window.URL.revokeObjectURL(href) // 释放掉blob对象
-        }
-      });
+      if(room_id == 0)
+        alert('请选择房间号！');
+      else {
+        $.ajax({
+          type: "get",
+          data: {
+            'room_id': room_id,
+          },
+          responseType: "blob",
+          url: '/users/reception/print_invoice/',
+          success: function (response) {
+            if (!response['message']) {
+              const blob = new Blob([response]);
+              const aEle = document.createElement('a'); // 创建a标签
+              const href = window.URL.createObjectURL(blob); // 创建下载的链接
+              aEle.href = href;
+              aEle.download = room_id + '账单' + '.txt'; // 下载后文件名
+              document.body.appendChild(aEle);
+              aEle.click(); // 点击下载
+              document.body.removeChild(aEle); // 下载完成移除元素
+              window.URL.revokeObjectURL(href) // 释放掉blob对象
+            }
+            else
+            alert("error:"+response['message']);
+          }
+        });
+      }
     }
     function query() {
       var room_id = $("#room_id").val();
-      $.ajax({
-        type: "get",
-        data: {
-          'room_id': room_id
-        },
-        url: '/users/reception/query_invoice/',
-        success: function (data) {
-          var lines = data['result'];
-          $("#room").html(lines['room_id']);
-          $("#begin").html(lines['check_in_time']);
-          $("#end").html(lines['check_out_time']);
-          $("#fee").html(lines['fee']);
-          $("#user").html(lines['user_id']);
-          $("#energy").html(lines['energy']);
-
-        },
-        error: function () {
-        }
-      });
+      if(room_id == 0)
+        alert('请选择房间号！');
+      else {
+        $.ajax({
+          type: "get",
+          data: {
+            'room_id': room_id
+          },
+          url: '/users/reception/query_invoice/',
+          success: function (data) {
+            if (data['message'] == 'OK') {
+              var lines = data['result'];
+              $("#room").html(lines['room_id']);
+              $("#begin").html(lines['check_in_time']);
+              $("#end").html(lines['check_out_time']);
+              $("#fee").html(lines['fee']);
+              $("#user").html(lines['user_id']);
+              $("#energy").html(lines['energy']);
+            }
+            else
+              alert('error:'+data['message'])
+          }
+        });
+      }
     }
-
   </script>
-
 </body>
 
 </html>

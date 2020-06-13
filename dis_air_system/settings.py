@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['*',]
 
 INSTALLED_APPS = [
     'TemperatureController',
-    'slave',
     'administrator',
     'reception',
     'client',

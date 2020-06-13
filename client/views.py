@@ -13,14 +13,11 @@ def check_out(request,room_id):
         controller1 = SlaveController.instance()
         controller2 = MasterController.instance()
         controller2.control(operation='check out', room_id=room_id)
-        status = controller1.control(operation='get status', room_id=room_id)['status']
+        #status = controller1.control(operation='get status', room_id=room_id)['status']
         redirect_to = '/login/client_login/'
         return redirect(redirect_to)
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
-
-
-
+        return render(request,'login/client_login.html',{'message':str(error)})
 
 
 def request_on(request,room_id):
@@ -32,7 +29,8 @@ def request_on(request,room_id):
         status = controller.control(operation='get status', room_id=room_id)['status']
         return render(request,'client/client_status.html',locals())
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request,'client/client_status.html',{'message':str(error)})
+       
 
 def request_off(request,room_id):
     try:
@@ -43,7 +41,7 @@ def request_off(request,room_id):
         status = controller.control(operation='get status', room_id=room_id)['status']
         return render(request,'client/client_status.html',locals())
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request, 'client/client_status.html', {'message': str(error)})
 
 
 def change_temper(request):
@@ -56,7 +54,7 @@ def change_temper(request):
         content = {'message': 'OK', 'result': None}
         return JsonResponse(content)
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request, 'client/client_status.html', {'message': str(error)})
 
 
 def change_speed(request):
@@ -68,7 +66,7 @@ def change_speed(request):
         content = {'message': 'OK', 'result': None}
         return JsonResponse(content)
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request, 'client/client_status.html', {'message': str(error)})
 
 #TODO:这个函数返回该从控机所有的状态值
 '''
@@ -94,7 +92,8 @@ def get_status(request,room_id):
 
         return JsonResponse(content)
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request, 'client/client_status.html', {'message': str(error)})
+        #return JsonResponse({'message': str(error)})
 
 def dashboard(request, room_id):
     try:
@@ -107,7 +106,8 @@ def dashboard(request, room_id):
         print(content1['frequent'])
         return render(request,'client/client_status.html',{'room_id':room_id,'status':status,'target_temp':target_temp,'frequency':content1['frequent']})
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        return render(request, 'login/client_login.html', {'message': str(error)})
+        #return JsonResponse({'message': str(error)})
 
 
 '''def param(request, room_id):

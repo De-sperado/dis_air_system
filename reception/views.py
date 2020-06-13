@@ -8,10 +8,10 @@ from django.shortcuts import render
 #TODO:新加了一个total_energy
 def query_invoice(request):
     room_id_get = request.GET.get('room_id')
-    if not room_id_get:
-        logger.error('缺少参数:房间号')
-        raise RuntimeError('缺少参数:房间号')
     try:
+        if not room_id_get:
+            logger.error('缺少参数:房间号')
+            raise RuntimeError('缺少参数:房间号')
         controller = InfoController.instance()
         content = controller.control(file_type='invoice', operation='query', room_id=room_id_get)
         content = {'message': 'OK',
@@ -30,10 +30,10 @@ def query_invoice(request):
 
 def print_invoice(request):
     room_id_get = request.GET.get('room_id')
-    if not room_id_get:
-        logger.error('缺少参数:房间号')
-        raise RuntimeError('缺少参数:房间号')
     try:
+        if not room_id_get:
+            logger.error('缺少参数:房间号')
+            raise RuntimeError('缺少参数:房间号')
         controller = InfoController.instance()
         filename = controller.control(file_type='invoice', operation='print', room_id=room_id_get)
         print(filename)
@@ -44,14 +44,15 @@ def print_invoice(request):
         return response
     except RuntimeError as error:
         return JsonResponse({'message': str(error)})
+
 #TODO：新加了一个energy
 def query_detail(request):
     room_id_get = request.GET.get('room_id')
 
-    if not room_id_get:
-        logger.error('缺少参数:房间号')
-        raise RuntimeError('缺少参数:房间号')
     try:
+        if not room_id_get:
+            logger.error('缺少参数:房间号')
+            raise RuntimeError('缺少参数:房间号')
         controller = InfoController.instance()
         content = controller.control(file_type='detail', operation='query', room_id=room_id_get)
         content = {'message': 'OK',
@@ -78,10 +79,10 @@ def query_detail(request):
 def print_detail(request):
     room_id_get = request.GET.get('room_id')
 
-    if not room_id_get:
-        logger.error('缺少参数:房间号')
-        raise RuntimeError('缺少参数:房间号')
     try:
+        if not room_id_get:
+            logger.error('缺少参数:房间号')
+            raise RuntimeError('缺少参数:房间号')
         controller = InfoController.instance()
         filename = controller.control(file_type='detail', operation='print', room_id=room_id_get)
         file = open(filename, 'r')
@@ -98,17 +99,18 @@ def func(request):
 def bill(request):
     return render(request, 'reception/reception_bill.html')
 
+#TODO:这是用于跳转页面时的
 def checkin(request):
     try:
         controller = MasterController.instance()
-        #content = {'message': 'OK', 'result': controller.control(operation='get status')}
         content = controller.control(operation='get status')
         print(content)
         return render(request, 'reception/reception_checkin.html',locals())
     except RuntimeError as error:
-        return JsonResponse({'message': str(error)})
+        message = str(error)
+        return render(request, 'reception/reception_invoice.html',locals())
 
-#TODO：这里有修改 需要获取user_id  这个函数是前台调用的   不是用户调用的  应该换一下位置
+#TODO：这是用于用户真正入住的
 def check_in(request):
     room_id_get = request.GET.get('room_id')
     user_id_get=request.GET.get('user_id')
