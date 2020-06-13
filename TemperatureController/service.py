@@ -252,7 +252,7 @@ class Dispatcher:
             self.__master_machine.status = RUNNING
         for room_id in room_ids:
             room = self.__master_machine.get_room(room_id)
-            if (room.status == CLOSED or room.status == STANDBY) and math.fabs(room.current_temp - CURRENT_TEMP) > 0.01:
+            if (room.status == CLOSED or room.status == STANDBY or room.status==AVAILABLE) and math.fabs(room.current_temp - CURRENT_TEMP) > 0.01:
                 temp = TARGET_STATUS_TEMP_CHANGE_RATE * UPDATE_FREQUENCY
                 if room.current_temp < CURRENT_TEMP:
                     if room.current_temp + temp > CURRENT_TEMP:
@@ -328,8 +328,6 @@ class SlaveService:
     # 关机
     def slave_machine_power_off(self, room_id):
         room = self.__master_machine.get_room(room_id)
-        if room.status == CLOSED:
-            logger.error('房间已关机')
         self.__slaver_queue.remove(room_id)
         room.turn_off()
         DBFacade.exec(Log.objects.create, room_id=room_id, operation=POWER_OFF,
@@ -457,6 +455,7 @@ class AdministratorService:
 
     # 退房
     def check_out(self, room_id: str):
+        self.__slave_service.slave_machine_power_off(room_id)
         self.__master_machine.get_room(room_id).check_out()
 
 
