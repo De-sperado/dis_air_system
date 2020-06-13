@@ -281,20 +281,9 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="{% static 'assets/demo/demo.js' %}"></script>
   <script>
-    function update_timer() {
-      var room_id = $('#room_id').attr("value");
-      $.ajax({
-        url: '/users/administrator/link/',
-        type: 'POST',
-        data: {'room_id': room_id}
-      });
-      setTimeout(function() {
-        update_timer()
-      }, 1000);
-    }
-    update_timer()
-  </script>
-  <script>
+    $.ajaxSetup({
+      data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
+    });
     function update(room_id) {
       $.getJSON("/users/client/get_status/" + room_id + "/", function (data) {
         $("#status").html(data['status']);
@@ -311,6 +300,11 @@
         $("#energy").html(data['energy']);
       });
       var fre = $("#frequency").text() * 1000;
+      $.ajax({
+        url: '/users/administrator/link/',
+        type: 'POST',
+        data: { 'room_id': room_id }
+      })
       setTimeout(function () {
         update(room_id)
       }, 1000);

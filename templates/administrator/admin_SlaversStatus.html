@@ -319,8 +319,27 @@
         count(limit);
       },1000);
     }
+    function check_link() {
+      $.ajax('/users/administrator/check_link/', function (data) {
+        if (data['linkBroken'] == 1) {
+          var room_id = data['room_id'];
+          const message = new Message();
+          message.show({
+            type: 'warning',
+            text: room_id + ' 号房间断开连接',
+            duration: 0,
+            closeable: true,
+           });
+        }
+      }
+      );
+      setTimeout(function() {
+        check_link();
+      }, 1000);
+    }
     $(document).ready(function() {
       update();
+      check_link();
       $().ready(function() {
         $sidebar = $('.sidebar');
 
