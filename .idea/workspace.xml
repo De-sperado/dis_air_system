@@ -2,53 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab17a152-3cda-4007-a652-a8e8b78e3452" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dis_air_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dis_air_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperatureController/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureController/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureController/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administrator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/administrator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dis_air_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dis_air_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/templates/login/client_login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/templates/login/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/templates/login/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/templates/login/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/templates/query_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/templates/query_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/reception/templates/query_invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reception/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reception/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slave/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/message.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/message.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/system.log" beforeDir="false" afterPath="$PROJECT_DIR$/system.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_MasterStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/administrator/admin_SlaversStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/client_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/client_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manager/manager_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manager/manager_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/reception_bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_bill.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/reception/reception_checkin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_checkin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reception/reception_invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reception/reception_invoice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,9 +206,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="270" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1591538772417" />
-    <state x="377" y="122" width="782" height="590" key="find.popup" timestamp="1592054853947">
+    <state x="377" y="122" width="782" height="590" key="find.popup" timestamp="1592060382076">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="377" y="122" width="782" height="590" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1592054853947" />
+    <state x="377" y="122" width="782" height="590" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1592060382076" />
   </component>
 </project>

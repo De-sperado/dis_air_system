@@ -117,6 +117,8 @@ class MasterMachine:
         room = self.get_room(room_id)
         details = self.get_detail(room_id)[1]
         details.sort(key=lambda x: x.start_time)
+        if details is None:
+            return None
         total_fee = 0
         user_id = details[0].user_id
         for detail in details:

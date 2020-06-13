@@ -18,6 +18,9 @@ def client_login(request):
             status = '关机'
             controller = MasterController.instance()
             content1 = controller.control(operation='get main status')
+            if content1['status']=='关机':
+                message='主控机未开机！'
+                return render(request, 'login/client_login.html', locals())
             frequency=content1['frequent']
             try:
                 controller = SlaveController.instance()
