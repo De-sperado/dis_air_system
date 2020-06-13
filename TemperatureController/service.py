@@ -367,7 +367,8 @@ class SlaverService:
         room = self.__master_machine.get_room(room_id)
         if room.status == CLOSED:
             logger.error('房间已关机')
-            raise RuntimeError('房间已关机')
+            print(f'{room_id}已关机，无需关机')
+            # raise RuntimeError('房间已关机')
         self.__slaver_queue.remove(room_id)
         room.turn_off()
         DBFacade.exec(Log.objects.create, room_id=room_id, operation=POWER_OFF,

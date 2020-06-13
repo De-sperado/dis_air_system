@@ -9,9 +9,10 @@ from threading import Timer
 linkTimer = [0 for i in range(5)]  # 检测连接的计时器
 linkedSlave = [False for i in range(5)]  # 标记从控机是否连接即投入使用
 roomToIndex = {'309': 0, '310': 1, '311': 2, '312': 3, '313': 4}
+indexToRoom={0:'309',1:'310',2:'311',3:'312',4:'313'}
 linkedNum = 0
-linkThreshold = 20  # 连接超时时间为20s
-linkBroken = [True for i in range(5)]
+linkThreshold = 5  # 连接超时时间为20s
+linkBroken = [False for i in range(5)]
 timerStart = False
 
 
@@ -96,12 +97,12 @@ def check_link_status():
             if linkedSlave[i]:
                 linkTimer[i] += 1
                 if linkTimer[i] > linkThreshold:
-                    room_id = roomToIndex.keys()[i]
+                    room_id = indexToRoom[i]
                     controller = SlaveController.instance()
                     controller.control(operation='power off', room_id=room_id)
                     linkedNum -= 1
                     linkedSlave[i] = False
-                    linkBroken[i] = False
+                    linkBroken[i] = True
 
     t = Timer(1, check_link_status)
     t.start()
@@ -134,6 +135,11 @@ def check_link(request):
     content = {"room_id": None, "linkBroken": 0}
     for i in range(5):
         if linkBroken[i] == True:
-            content["room_id"] = roomToIndex.keys()[i]
+            print(f'i={i}\t{indexToRoom[i]}以断开连接')
+            # slaveController=SlaveController.instance()
+            # kwargs={'poweroff':'poweroff','roomid':indexToRoom[i]}
+            # slaveController.control(poweroff='poweroff',room_id=indexToRoom[i])
+            content["room_id"] = indexToRoom[i]
             content["linkBroken"] = 1
+            linkBroken[i]=False #只弹窗一次
     return render(request, 'administrator/admin_SlaversStatus.html', content)
