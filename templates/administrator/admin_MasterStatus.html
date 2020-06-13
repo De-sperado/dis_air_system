@@ -278,7 +278,25 @@
     $('#warm-down').click(function () {
         $("#slider-warm-amount").text(parseInt($("#slider-warm-amount").text())-1);
     });
-
+    function check_link() {
+      var bre=0;
+      $.ajax({
+            url: '/users/administrator/check_link/',
+            type: 'get',
+            success: function (data) {
+                if (data['linkBroken'] == 1) {
+                    var room_id = data['room_id'];
+                    alert(room_id+'房间已断开连接！');
+                }
+            },
+        });
+      setTimeout(function() {
+        check_link();
+      }, 1000);
+    }
+        $(document).ready(function() {
+      check_link();
+    });
 </script>
 </body>
 
