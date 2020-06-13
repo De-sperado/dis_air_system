@@ -281,6 +281,9 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="{% static 'assets/demo/demo.js' %}"></script>
   <script>
+    $.ajaxSetup({
+      data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
+    });
     function update(room_id) {
       $.getJSON("/users/client/get_status/" + room_id + "/", function (data) {
         $("#status").html(data['status']);
@@ -297,6 +300,11 @@
         $("#energy").html(data['energy']);
       });
       var fre = $("#frequency").text() * 1000;
+      $.ajax({
+        url: '/users/administrator/link/',
+        type: 'POST',
+        data: { 'room_id': room_id }
+      })
       setTimeout(function () {
         update(room_id)
       }, 1000);
@@ -568,44 +576,7 @@
       });
     });
 
-    /*function param() {
-      var room_id = $("#room_id").attr("value");
-      var speed = $("#speed").val();
-      var temp = $("#temp").val();
 
-      if (speed>=0)
-        $.ajax({
-                    type:"get",
-                    data:{
-                        'room_id': room_id,
-                        'speed': speed
-                    },
-                    url:'http://127.0.0.1:8000/users/client/change_speed/',
-                    success:function (data) {
-                        alert("风速设置："+data['message']);
-                    },
-                    error:function () {
-                        alert("error:"+data['message']);
-                    }
-                });
-      if (temp)
-        $.ajax({
-                    type:"get",
-                    data:{
-                        'room_id': room_id,
-                        'target_temper': temp
-                    },
-                    url:'http://127.0.0.1:8000/users/client/change_temper/',
-                    success:function (data) {
-                        alert("温度设置："+data['message']);
-                    },
-                    error:function () {
-                        alert("error:"+data['message']);
-                    }
-                });
-      if(speed<0 && !temp)
-        alert("至少设置一个参数！")
-    }*/
   </script>
 
 </body>
