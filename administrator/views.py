@@ -102,7 +102,11 @@ def check_link_status():
         for i in range(5):
             if linkedSlave[i]:
                 linkTimer[i] += 1
-                if linkTimer[i] > linkThreshold and salveStatus[i]['status']!=AVAILABLE and salveStatus[i]['status']!=CLOSED:
+                if salveStatus[i]['status']==AVAILABLE:
+                    linkedNum -= 1
+                    linkedSlave[i] = False
+                    continue
+                if linkTimer[i] > linkThreshold and salveStatus[i]['status']!=CLOSED:
                     room_id = indexToRoom[i]
                     controller = SlaveController.instance()
                     controller.control(operation='power off', room_id=room_id)
@@ -112,6 +116,7 @@ def check_link_status():
 
     t = Timer(1, check_link_status)
     t.start()
+
 
 
 
