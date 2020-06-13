@@ -285,7 +285,9 @@
       data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
     });
     function update(room_id) {
-      $.getJSON("/users/client/get_status/" + room_id + "/", function (data) {
+      $.getJSON({
+        url: "/users/client/get_status/" + room_id + "/",
+                success:         function (data) {
         $("#status").html(data['status']);
         $("#mode").html(data['mode']);
         $("#current_temper").html(data['current_temper']);
@@ -298,7 +300,12 @@
         $("#target_temp").html(data['target_temper']);
         $("#fee").html(data['fee']);
         $("#energy").html(data['energy']);
-      });
+      },
+        error: function () {
+          alert("网络连接断开，正在重连");
+        }
+    }
+);
       var fre = $("#frequency").text() * 1000;
       $.ajax({
         url: '/users/administrator/link/',
