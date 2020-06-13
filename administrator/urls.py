@@ -25,5 +25,6 @@ urlpatterns = [
     #url(r'^start_up', views.start_up),
     url(r'^check_room_state', views.check_room_state),
     url(r'^close', views.close),
-    url(r'^link', views.update_link_timer),
+    url(r'^link', views.link),
+    url(r'^check_link', views.check_link),
 ]

@@ -11,6 +11,7 @@ linkedSlave=[False for i in range(5)]   #标记从控机是否连接即投入使
 roomToIndex={'309':0,'310':1,'311':2,'312':3,'313':4}
 linkedNum=0
 linkThreshold=20    #连接超时时间为20s
+linkBroken = [True for i in range(5)]
 timerStart=False
 
 def power_on(request):
@@ -73,37 +74,52 @@ def close(request):
     content = {'message': 'OK', 'result': controller.control(operation='get main status')}
     return render(request, 'administrator/admin_MasterStatus.html', locals())
 
-def check_link():
+def check_link_status():
     global linkedNum
     global  linkTimer
     global  linkedSlave
     global  linkThreshold
+    global linkBroken
     global  t
     if linkedNum:   #当有已连接的从机时执行这个操作
         for i in range(5):
             if linkedSlave[i]:
+                linkTimer[i] += 1
                 if linkTimer[i] > linkThreshold:
                     room_id = roomToIndex.keys()[i]
                     controller = SlaveController.instance()
                     controller.control(operation='power off', room_id=room_id)
                     linkedNum-=1
                     linkedSlave[i]=False
-                    return render(request, 'administrator/admin_SlaveStatus.html', {'room_id':room_id, 'link_broken': true})
+                    linkBroken[i] = False
 
-    t = Timer(1, check_link)
+    t = Timer(1, check_link_status)
     t.start()
 
-t=Timer(1,check_link)   #计时器
+t=Timer(1,check_link_status)   #计时器
 
-def update_link_timer(request):
+def link(request):
     '''更新连接时间'''
     global linkTimer
     global linkedSlave
     global roomToIndex
     global linkedNum
+    global linkBroken
     room_id=request.POST.get('room_id')
     i=roomToIndex[room_id]
     if not linkedSlave[i]:
         linkedSlave[i]=True
         linkedNum+=1
     linkTimer[i] = 0    #更新连接时间
+    linkBroken[i] = 0
+    return HttpResponse(str(room_id) + 'connecting.')
+
+def check_link(request):
+    global linkBroken
+    global roomToIndex
+    content = {"room_id": None, "linkBroken": 0}
+    for i in range(5):
+        if linkBroken[i] == True:
+            content["room_id"] = roomToIndex.keys()[i]
+            content["linkBroken"] = 1
+    return render(request, 'administrator/admin_SlaversStatus.html', content)
